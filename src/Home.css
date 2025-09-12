@@ -1,0 +1,213 @@
+/*home.css*/
+.hero-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25); /* subtle dark overlay for contrast */
+}
+
+.hero-text {
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  transform: translateY(-50%);
+  max-width: 35%;
+  color: white;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.hero-sub {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.hero-cta {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ✅ Medium screens: shrink text a bit */
+@media (max-width: 992px) {
+  .hero-text {
+    max-width: 40%;
+    right: 3%;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+}
+
+/* ✅ Small screens: still overlay but adjust font sizes & width */
+@media (max-width: 768px) {
+  .hero-text {
+    max-width: 40%;
+    top: 15%;
+    right: 5%;
+    text-align: right; /* align right for mobile look */
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+  }
+
+  .hero-cta {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ✅ Extra small screens (mobile portrait): force text fully inside image */
+@media (max-width: 480px) {
+  .hero-text {
+    max-width: 55%;
+    right: 5%;
+    top:auto;
+    bottom: 10%;
+    transform: none; /* place near bottom */
+  }
+
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .hero-sub {
+    font-size: 0.85rem;
+  }
+}
+.product-card:hover .product-img {
+  transform: scale(1.1);
+}
+.product-img{
+  object-fit: contain;
+}
+
+
+/* Carousel image responsive styles */
+.category-img {
+  max-width: 550px;
+  width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-img:hover {
+  transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+/* Testimonial Cards */
+.card {
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.choose-us-card {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.choose-us-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon size and spacing */
+.choose-us-card i {
+  margin-bottom: 15px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 576px) {
+  .choose-us-card h5 {
+    font-size: 1rem;
+  }
+  .choose-us-card p {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+/* Testimonials Carousel */
+.testimonial-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 0.5rem;
+  line-height: 1.5;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  color: #28a745; /* Green to match theme */
+  font-size: 1rem;
+}
+
+/* Optional: fade animation for smoother transition */
+/* .testimonial-item {
+  transition: opacity 1s ease-in-out;
+} */
+
+/* Responsive */
+@media (max-width: 576px) {
+  .testimonial-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .testimonial-name {
+    font-size: 0.9rem;
+  }
+}
+
+

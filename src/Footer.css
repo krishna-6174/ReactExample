@@ -1,0 +1,20 @@
+li .footer-link {
+  color: white !important;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding-bottom: 5px;
+}
+
+li .footer-link:hover {
+  color: rgba(92, 216, 10, 0.753) !important;
+  transform: translateX(20px);
+}
+.social-icon {
+    color: white !important;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-icon:hover{
+    color: blue !important;
+    transform: scale(1.5);
+}

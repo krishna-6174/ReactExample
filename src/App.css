@@ -1,0 +1,150 @@
+/* App.css */
+#root{
+  margin: auto;
+  background-color: #f8f9fa;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+.navbar .nav-link{
+  color: white;
+}
+/* Active link style */
+.navbar .nav-link.active {
+  color: #0d6efd !important; /* bootstrap primary blue */
+  font-weight: bold;
+  border-bottom: 2px solid #0d6efd;
+}
+
+/* Hover style */
+.navbar .nav-link:hover {
+  color: #ffc107 !important; /* bootstrap warning yellow */
+  transition: 0.3s;
+}
+
+
+/* App.css */
+/* Mobile-specific navbar styling */
+/* Mobile-first tweaks */
+@media (max-width: 991px) {
+  .custom-navbar {
+    padding: 0.75rem 0.5rem;
+    background-color: #1b1f24; /* slightly darker */
+  }
+
+  .navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .navbar-toggler {
+    border: none;
+    box-shadow: none !important;
+  }
+
+  /* Make items larger and centered */
+  #navbarNav .navbar-nav .nav-item {
+    margin: 8px 0;
+  }
+
+  #navbarNav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  /* Active item highlight for better UX on touch */
+  #navbarNav .nav-link.active {
+    background: rgba(255, 255, 255, 0.08);
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background-color: #212529;
+  color: #f8f9fa;
+  transition: left 0.3s ease-in-out;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+.sidebar.open {
+  left: 0;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  /* background-color: #343a40; */
+  border-top-right-radius: 12px;
+  font-weight: 600;
+}
+
+/* Divider */
+.sidebar-divider {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Sidebar Links */
+.sidebar-link {
+  display: block;
+  padding: 12px 20px;
+  color: #f8f9fa;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+.sidebar-link:hover {
+  background-color: #343a40;
+  border-left: 3px solid #0dfd49;
+  color: #0dfd49;
+  padding-left: 25px;
+}
+.sidebar-link.active {
+  background-color: #495057;
+  border-left: 3px solid #0d6efd;
+  color: #0d6efd;
+  font-weight: bold;
+  padding-left: 25px;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1040;
+}
+.sidebar-overlay.show {
+  display: block;
+}
+
+
+
+
+
+/* Hide desktop navbar links on small screens */
+@media (max-width: 991px) {
+  .navbar .navbar-collapse {
+    display: none !important;
+  }
+}
+
