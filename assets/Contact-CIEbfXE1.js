@@ -1,0 +1,1 @@
+import{j as e}from"./index-Cf_GWrgA.js";function s(){return e.jsx(e.Fragment,{children:e.jsxs("div",{className:"container-fluid mt-3",children:[e.jsx("h1",{className:"text-center",children:"Contact Us"}),e.jsx("p",{className:"text-center",children:"Feel free to reach out to us!"})]})})}export{s as default};
