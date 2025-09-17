@@ -9,12 +9,10 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import HomeIcon from "@mui/icons-material/Home";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 export default function Register() {
-
-    const location = useLocation();
-    const navigate = useNavigate();
-  const redirectTo = location.state?.from || "/"; // default redirect
-
+ const navigate = useNavigate();
+   
   const {
     register,
     handleSubmit,
@@ -27,14 +25,13 @@ const dispatch = useDispatch();
    const onSubmit = (data) => {
     // ✅ Send data to Redux store
     dispatch(registerUser(data));
-
-    console.log("Form Submitted ✅", data);
-    alert("✅ Registration Successful!");
+    toast.success("✅ Registration Successful!");
+    navigate('/login');
 
 
     
     // ✅ Redirect to cart if came from there, else homepage
-    navigate(redirectTo, { replace: true });
+    
   };
 
   return (

@@ -173,8 +173,8 @@ function Cart() {
         <table className="table table-borderless">
           <tbody>
             <tr><td>Total Amount</td><td className="text-end">₹{totalAmount.toFixed(2)}</td></tr>
-            {buttonDiscount !== 0 && <tr className="text-success"><td>Button Discount</td><td className="text-end">- ${discountAmount.toFixed(2)}</td></tr>}
-            {couponCodeResult.isValid && <tr className="text-success"><td>Coupon "{appliedCoupon}"</td><td className="text-end">- ₹{couponCodeResult.discountAmount.toFixed(2)}</td></tr>}
+            {buttonDiscount !== 0 && <tr className="text-success"><td>Manual Discount</td><td className="text-end">- ₹{discountAmount.toFixed(2)}</td></tr>}
+            {couponCodeResult.isValid && <tr className="text-success"><td>Coupon "{appliedCoupon}" ({couponCodeResult.discountPercentage}%)</td><td className="text-end">- ₹{couponCodeResult.discountAmount.toFixed(2)}</td></tr>}
             <tr><td>Shipping</td><td className="text-end">₹{shippingCost.toFixed(2)}</td></tr>
             <tr><td>Tax (5%)</td><td className="text-end">₹{tax.toFixed(2)}</td></tr>
             <tr className="fw-bold border-top"><td>Final Price</td><td className="text-end text-primary fs-4">₹{finalPrice.toFixed(2)}</td></tr>

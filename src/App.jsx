@@ -6,6 +6,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Spinner from "./Spinner";
 import Footer from "./Footer";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+
 import LocalDrinkIcon from "@mui/icons-material/LocalDrink"; // for milk
 import KebabDiningIcon from '@mui/icons-material/KebabDining';
 import CookieIcon from "@mui/icons-material/Cookie";     // cookies/snacks
@@ -68,7 +72,7 @@ function App() {
 
   return (
     <>
-      <ToastContainer theme='dark' position='top-right' autoClose={3000} hideProgressBar={false} />
+      <ToastContainer theme='dark' position='top-right' autoClose={3000} hideProgressBar={false} closeOnClick={true} />
 
       <BrowserRouter>
       

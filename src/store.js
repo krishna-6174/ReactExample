@@ -1686,10 +1686,12 @@ const wishlistSlice = createSlice({
 const savedUsers = JSON.parse(localStorage.getItem("users") || "[]");
 const savedAuthState = JSON.parse(localStorage.getItem("authState") || "null");
 
+
 const initialState = {
   allUsers: savedUsers, // ✅ List of all registered users
   isAuthenticated: savedAuthState?.isAuthenticated || false,
   currentUser: savedAuthState?.currentUser || null,
+  error: null, // ✅ Track login errors
 };
 
 const usersSlice = createSlice({
@@ -1704,13 +1706,18 @@ const usersSlice = createSlice({
 
     // ✅ Login user (set current user + authentication)
     loginUser: (state, action) => {
+       // clear error before checking
+  state.error = null;
       const user = state.allUsers.find(
-        (u) => u.email === action.payload.email && u.password === action.payload.password
+        (u) =>
+          u.email === action.payload.email &&
+          u.password === action.payload.password
       );
 
       if (user) {
         state.isAuthenticated = true;
         state.currentUser = user;
+        state.error = null; // clear previous errors
         localStorage.setItem(
           "authState",
           JSON.stringify({
@@ -1719,7 +1726,9 @@ const usersSlice = createSlice({
           })
         );
       } else {
-        console.warn("Invalid login credentials");
+        state.isAuthenticated = false;
+        state.currentUser = null;
+        state.error = "Invalid login credentials"; // set error for useEffect
       }
     },
 
@@ -1729,7 +1738,9 @@ const usersSlice = createSlice({
         state.currentUser = { ...state.currentUser, ...action.payload };
 
         // also update in allUsers list
-        const index = state.allUsers.findIndex((u) => u.email === state.currentUser.email);
+        const index = state.allUsers.findIndex(
+          (u) => u.email === state.currentUser.email
+        );
         if (index !== -1) state.allUsers[index] = state.currentUser;
 
         localStorage.setItem("users", JSON.stringify(state.allUsers));
@@ -1747,6 +1758,7 @@ const usersSlice = createSlice({
     logoutUser: (state) => {
       state.isAuthenticated = false;
       state.currentUser = null;
+      state.error = null;
       localStorage.setItem(
         "authState",
         JSON.stringify({
@@ -1762,6 +1774,7 @@ const usersSlice = createSlice({
       if (savedAuth) {
         state.isAuthenticated = savedAuth.isAuthenticated;
         state.currentUser = savedAuth.currentUser;
+        state.error = null;
       }
     },
   },

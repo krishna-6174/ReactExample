@@ -2,13 +2,19 @@ import React, { useRef,useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom"; // ✅ Import if using React Router
 import { useMediaQuery } from "react-responsive";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import { useEffect } from "react";
-import "./Home.css";
+import './Home.css'
+import {  Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 
 function Home() {
-
-const isMobile = useMediaQuery({ maxWidth: 768 }); // Mobile: <= 768px
+const isMobile = useMediaQuery({ maxWidth: 480 }); // Mobile: <= 768px
 const [timeLeft, setTimeLeft] = useState({});
   const categoriesRef = useRef(null);
   const offers = [
@@ -29,6 +35,7 @@ const [timeLeft, setTimeLeft] = useState({});
 ];
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const newTimeLeft = {};
@@ -51,15 +58,16 @@ const [timeLeft, setTimeLeft] = useState({});
   }, []);
 
  const products = [
+  { id: 4, name: "Apples", image: "/public/veg/apples.webp", price: 80 },
+   { id: 3, name: "Carrots", image: "/veg/carrot.png", price: 50, offerPrice: 45 },
+ { id: 2, name: "Bendi", image: "/veg/bendi.png", price: 30 },
   { id: 1, name: "Fresh Tomatoes", image: "/veg/tomato.png", price: 40, offerPrice: 35 },
-  { id: 2, name: "Cucumber", image: "/veg/bendi.png", price: 30 },
-  { id: 3, name: "Carrots", image: "/veg/carrot.png", price: 50, offerPrice: 45 },
-  { id: 4, name: "Apples", image: "/fruits/apples.jpg", price: 80 },
-  { id: 5, name: "Milk", image: "/milk/milk-bottle.jpg", price: 25 },
-  { id: 6, name: "Juice Drinks", image: "/drinks/juice.jpg", price: 60 },
-  { id: 7, name: "Snacks", image: "/treats/snacks.jpg", price: 35 },
-  { id: 8, name: "Fish", image: "/nonveg/fish.jpg", price: 150 },
-  { id: 9, name: "Medicines", image: "/medicine/pills.jpg", price: 200 },
+ 
+  { id: 5, name: "Milk", image: "/public/milk/buffalo-milk.webp", price: 25 },
+  { id: 6, name: "Juice Drinks", image: "/public/drinks/orange-juice.png", price: 60 },
+  { id: 7, name: "Snacks", image: "/public/treats/murukku.webp", price: 35 },
+  { id: 8, name: "Fish", image: "/public/nonveg/fish.png", price: 150 },
+  { id: 9, name: "Medicines", image: "/public/medicines/cetirizine.png", price: 200 },
 ];
 
 
@@ -117,22 +125,32 @@ const [timeLeft, setTimeLeft] = useState({});
     { icon: "bi-phone-fill", title: "24/7 Support", desc: "We are here to help you" },
   ];
 
-
-    const testimonials = [
-    {
-      text: "Amazing quality and super fast delivery! I love shopping here.",
-      name: "Priya S.",
-    },
-    {
-      text: "Fresh vegetables and fruits every time. Excellent service.",
-      name: "Rahul K.",
-    },
-    {
-      text: "Affordable prices and easy returns. Highly recommend!",
-      name: "Anjali M.",
-    },
-  ];
-
+const testimonials = [
+  {
+    text: "Fresh fruits delivered right on time! Quality was amazing.",
+    name: "Amit Sharma",
+    image: "/public/carasol/user3.webp",
+    rating: 5,
+  },
+  {
+    text: "Loved the organic vegetables. Very fresh and affordable!",
+    name: "Priya Patel",
+    image: "/public/carasol/user4.jpg",
+    rating: 4,
+  },
+  {
+    text: "Fast delivery and great packaging. Will order again.",
+    name: "Rahul Verma",
+    image: "/public/carasol/user1.webp",
+    rating: 5,
+  },
+  {
+    text: "Wide variety of grocery items at reasonable prices.",
+    name: "Sneha Reddy",
+    image: "/public/carasol/user5.webp",
+    rating: 5,
+  },
+];
         const handleExplore = () =>{
          if (categoriesRef.current) {
       categoriesRef.current.scrollIntoView({
@@ -184,66 +202,60 @@ const [timeLeft, setTimeLeft] = useState({});
 
 
     {/*option 2*/}
-    <section className="container my-5">
+    <section className="container-fluid my-5">
       <h2 className="text-center fw-bold mb-4">Featured Products</h2>
 
       {!isMobile ? (
-        // ---------- Desktop Carousel ----------
-        <div
-          id="featuredCarousel"
-          className="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-interval="4000"
-          ref={carouselRef}
-        >
-          <div className="carousel-inner">
-            {slides.map((slide, idx) => (
-              <div key={idx} className={`carousel-item ${idx === 0 ? "active" : ""}`}>
-                <div className="d-flex justify-content-center gap-3">
-                  {slide.map((product) => (
-                    <Card key={product.id} className="text-center shadow-sm border-0" style={{ width: "18rem" }}>
-                      <Card.Img
-                        variant="top"
-                        src={product.image}
-                        style={{ height: "180px", objectFit: "cover", borderRadius: "10px" }}
-                      />
-                      <Card.Body>
-                        <Card.Title>{product.name}</Card.Title>
-                        <Card.Text>
-                          {product.offerPrice ? (
-                            <>
-                              <span className="text-danger fw-bold">${product.offerPrice}</span>{" "}
-                              <del className="text-muted">${product.price}</del>
-                            </>
-                          ) : (
-                            <span className="fw-bold">${product.price}</span>
-                          )}
-                        </Card.Text>
-                        <Button variant="primary">Add to Cart</Button>
-                      </Card.Body>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
 
-          {/* ---------- Custom Indicators Below Cards ---------- */}
-          <div className="d-flex justify-content-center mt-3">
-            {slides.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                data-bs-target="#featuredCarousel"
-                data-bs-slide-to={idx}
-                className={`mx-1  ${activeIndex === idx ? "bg-primary" : "bg-secondary"}`}
-                aria-current={activeIndex === idx ? "true" : undefined}
-                aria-label={`Slide ${idx + 1}`}
-                style={{ width: "10px", height: "2px", border: "none", opacity: 1, cursor: "pointer" }}
-              />
+      <div className="m-4">
+      
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={4}
+            
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 4000 }}
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              500: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+            }}
+            className="custom-swiper"
+          >
+            
+            {slides.flat().map((product) => (
+              <SwiperSlide key={product.id}>
+                <Card className="text-center shadow-sm border-0" style={{ width: "18rem" }}>
+                  <Card.Img
+                    variant="top"
+                    src={product.image}
+                    style={{ height: "180px", objectFit: "contain", borderRadius: "10px" }}
+                  />
+                  <Card.Body>
+                    <Card.Title className="text-truncate">{product.name}</Card.Title>
+                    <Card.Text>
+                      {product.offerPrice ? (
+                        <>
+                          <span className="text-danger fw-bold">₹{product.offerPrice}</span>{" "}
+                          <del className="text-muted">₹{product.price}</del>
+                        </>
+                      ) : (
+                        <span className="fw-bold">₹{product.price}</span>
+                      )}
+                    </Card.Text>
+                    <Button variant="primary">Add to Cart</Button>
+                  </Card.Body>
+                  
+                </Card>
+                
+              </SwiperSlide>
             ))}
-          </div>
+            
+          </Swiper>
         </div>
+          
       ) : (
         // ---------- Mobile Horizontal Scroll ----------
         <div className="d-flex gap-3 pb-2 px-2 overflow-auto" style={{ scrollSnapType: "x mandatory" }}>
@@ -267,18 +279,18 @@ const [timeLeft, setTimeLeft] = useState({});
                 src={product.image}
                 className="card-img-top"
                 alt={product.name}
-                style={{ height: "180px", objectFit: "cover" }}
+                style={{ height: "180px", objectFit: "contain" }}
               />
               <div className="card-body text-center">
                 <h6 className="card-title fw-bold">{product.name}</h6>
                 <p className="card-text">
                   {product.offerPrice ? (
                     <>
-                      <span className="text-danger fw-bold">${product.offerPrice}</span>{" "}
-                      <del className="text-muted">${product.price}</del>
+                      <span className="text-danger fw-bold"> ₹{product.offerPrice}</span>{" "}
+                      <del className="text-muted"> ₹{product.price}</del>
                     </>
                   ) : (
-                    <span className="fw-bold">${product.price}</span>
+                    <span className="fw-bold">₹{product.price}</span>
                   )}
                 </p>
                 <Button variant="primary" size="sm">Add to Cart</Button>
@@ -289,138 +301,154 @@ const [timeLeft, setTimeLeft] = useState({});
       )}
     </section>
  
-
-
-
-
-     
-
     <section ref={categoriesRef} className="container py-5">
       <h2 className="text-center fw-bold mb-4">🛍 Shop by Category</h2>
 
       {/* ---------- DESKTOP/TABLET VIEW (Bootstrap Carousel) ---------- */}
-      {!isMobile && (
-        <div
-          id="categoryCarousel"
-          className="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-interval="3000"
-          data-bs-pause="false"
-        >
-          <div className="carousel-inner">
-            {carouselSlides.map((slide, index) => (
-              <div
-                key={slide.id}
-                className={`carousel-item text-center ${
-                  index === 0 ? "active" : ""
-                }`}
-              >
-                {/* Make image clickable */}
-                <Link to={slide.link} style={{ textDecoration: "none", color: "inherit" }}>
-                  <img
-                    src={slide.imagePath}
-                    className="d-block mx-auto category-img"
-                    alt={slide.title}
-                    style={{
-                      cursor: "pointer",
-                      objectFit: "cover",
-                      borderRadius: "15px",
-                    }}
-                  />
-                  <h5 className="mt-3 fw-bold">{slide.title}</h5>
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          {/* Controls */}
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#categoryCarousel"
-            data-bs-slide="prev"
-          >
-            <span className="carousel-control-prev-icon bg-dark rounded-circle p-3"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#categoryCarousel"
-            data-bs-slide="next"
-          >
-            <span className="carousel-control-next-icon bg-dark rounded-circle p-3"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-      )}
-
-      {/* ---------- MOBILE VIEW (Horizontal Scrollable Cards) ---------- */}
-{isMobile && (
-  <div
-    className="d-flex gap-3 pb-2 px-2"
-    style={{
-      overflowX: "auto",
-      scrollbarWidth: "none",
-      msOverflowStyle: "none",
-      scrollSnapType: "x mandatory",
-      WebkitOverflowScrolling: "touch",
-    }}
+       {!isMobile && (
+        <Swiper
+    modules={[Navigation, Autoplay]} // ❌ Removed Pagination
+    spaceBetween={20}
+    slidesPerView={1}
+    navigation // ✅ enables < >
+    autoplay={{ delay: 3000, disableOnInteraction: false }}
+    loop={true}
+    className="category-swiper"
   >
-    {/* Hide scrollbar visually */}
-    <style>
-      {`
-        div::-webkit-scrollbar {
-          display: none;
-        }
-      `}
-    </style>
-
-   
-    {
-     carouselSlides.map((item) => (
-          <Link
-            key={item.id}
-            to={item.link}
-            style={{ textDecoration: "none", color: "inherit" }}
+    {carouselSlides.map((slide) => (
+      <SwiperSlide
+        key={slide.id}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Link
+          to={slide.link}
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+            display: "block",
+          }}
+        >
+          <div
+            style={{
+              aspectRatio: "20/12",
+              width: "60%",
+              margin: "0 auto",
+              overflow: "hidden",
+            }}
           >
-            <div
-              className="card shadow-sm flex-shrink-0 border-0"
+            <img
+              src={slide.imagePath}
+              alt={slide.title}
               style={{
-                width: "70vw",
-                scrollSnapAlign: "start",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
                 borderRadius: "15px",
+              }}
+            />
+          </div>
+          <h5 className="mt-3 fw-bold text-center">{slide.title}</h5>
+        </Link>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+      )}
+{/* mobile carousol */}
+ {isMobile && (
+  <div
+      className="d-flex gap-3 pb-3 px-2 overflow-auto"
+      style={{
+        scrollSnapType: "x mandatory",
+        WebkitOverflowScrolling: "touch",
+        scrollPadding: "0 1rem",
+      }}
+    >
+      {carouselSlides.map((item) => (
+        <Link
+          key={item.id}
+          to={item.link}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <div
+            className="card flex-shrink-0 shadow-sm border-0"
+            style={{
+              width: "70vw",
+              scrollSnapAlign: "start",
+              borderRadius: "15px",
+              overflow: "hidden",
+              backgroundColor: "#fff",
+              transition: "transform 0.2s ease, box-shadow 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.03)";
+              e.currentTarget.style.boxShadow = "0 6px 12px rgba(0,0,0,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
+            }}
+            onTouchStart={(e) => {
+              e.currentTarget.style.transform = "scale(1.03)";
+              e.currentTarget.style.boxShadow = "0 6px 12px rgba(0,0,0,0.15)";
+            }}
+            onTouchEnd={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
+            }}
+          >
+            {/* Image */}
+            <div
+              style={{
+                width: "100%",
+                //aspectRatio: "16/9",
                 overflow: "hidden",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.05)";
-                e.currentTarget.style.boxShadow = "0 6px 12px rgba(0,0,0,0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#f8f8f8",
               }}
             >
               <img
                 src={item.imagePath}
-                className="card-img-top"
+                loading="lazy"
                 alt={item.title}
                 style={{
-                  height: "180px",
-                  objectFit: "cover",
-                  borderBottom: "2px solid #f0f0f0",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  backgroundColor: "#f8f8f8", // optional: placeholder color while loading
+                  transition: "transform 0.3s ease",
                 }}
               />
-              <div className="card-body text-center">
-                <h6 className="card-title fw-bold">{item.title}</h6>
-              </div>
             </div>
-          </Link>
-        ))}
-  </div>
-)}
 
+            {/* Card Body */}
+            <div className="card-body text-center py-2 px-2">
+              <h2
+                className="card-title fw-bold"
+                style={{
+                  fontSize: "1rem",
+                  lineHeight: "1.3rem",
+                  marginBottom: "0.25rem",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+              >
+                {item.title}
+              </h2>
+            </div>
+          </div>
+        </Link>
+      ))}
+
+    </div>
+)}
 
 
     </section>
@@ -446,24 +474,27 @@ const [timeLeft, setTimeLeft] = useState({});
 
 
           {/*option 4*/}
-           <div className="container my-5">
-  <h2 className="mb-4 text-center">Special Offers</h2>
+          <div className="container my-5">
+  <h2 className="mb-4 text-center fw-bold">🔥 Special Offers</h2>
 
-  <div className="row justify-content-center g-3">
+  <div className="row g-4 justify-content-center">
     {offers.map((offer) => (
-      <div key={offer.id} className="col-md-4 col-sm-6 col-12">
-        <Card className="offer-card text-white shadow-sm h-100 position-relative">
-          <Card.Img
-            src={offer.image}
-            alt={offer.title}
-            style={{ height: "220px", objectFit: "cover", borderRadius: "10px" }}
-          />
-          <Card.ImgOverlay className="d-flex flex-column justify-content-end bg-dark bg-opacity-50 p-3" style={{ borderRadius: "10px" }}>
-            <Card.Title>{offer.title}</Card.Title>
-            <Card.Text>{offer.description}</Card.Text>
-            <Card.Text className="fw-bold">Ends in: {timeLeft[offer.id]}</Card.Text>
-            <Button variant="light" size="sm">Shop Now</Button>
-          </Card.ImgOverlay>
+      <div
+        key={offer.id}
+        className="col-lg-4 col-md-6 col-12"
+      >
+        <Card className="offer-card shadow-sm h-100 position-relative text-white">
+          <div className="offer-img-wrapper">
+            <Card.Img src={offer.image} alt={offer.title} />
+            <div className="offer-overlay">
+              <Card.Title>{offer.title}</Card.Title>
+              <Card.Text>{offer.description}</Card.Text>
+              <Card.Text className="fw-bold countdown">
+                Ends in: {timeLeft[offer.id]}
+              </Card.Text>
+              <Button variant="light" size="sm">Shop Now</Button>
+            </div>
+          </div>
         </Card>
       </div>
     ))}
@@ -472,40 +503,65 @@ const [timeLeft, setTimeLeft] = useState({});
 
 
 
+ <div className="container my-5">
+      <h2 className="text-center fw-bold mb-4 text-success">
+        Happy Customers
+      </h2>
 
-
-
-
-        {/*testimonial carousel*/}
-         <div className="container my-5">
-      <h2 className="text-center fw-bold mb-4">What Our Customers Say</h2>
-
-      <div
-        id="testimonialCarousel"
-        className="carousel slide"
-        data-bs-ride="carousel"
-        data-bs-pause="false"
-        data-bs-interval="4000" // auto-slide every 4 sec
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        loop={true}
+        spaceBetween={20}
+        breakpoints={{
+          0: { slidesPerView: 1 },     // Mobile
+          768: { slidesPerView: 2 },   // Tablet
+          1024: { slidesPerView: 3 },  // Laptop/Desktop
+        }}
       >
-        <div className="carousel-inner">
-          {testimonials.map((t, index) => (
+        {testimonials.map((t, index) => (
+          <SwiperSlide key={index}>
             <div
-              key={index}
-              className={`testimonial-item carousel-item text-center ${
-                index === 0 ? "active" : ""
-              }`}
+              className="p-4 bg-white rounded-4 shadow-sm h-100"
+              style={{ border: "1px solid #e9f5e9" }}
             >
-              <p className="testimonial-text">"{t.text}"</p>
-              <h6 className="testimonial-name">– {t.name}</h6>
+              <div className="d-flex align-items-center mb-3">
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="rounded-circle me-3"
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    objectFit: "cover",
+                    border: "2px solid #28a745",
+                  }}
+                />
+                <div>
+                  <h6 className="mb-0 fw-bold text-success">{t.name}</h6>
+                  <div className="text-warning small">
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <i
+                        key={i}
+                        className={`bi ${
+                          i < t.rating ? "bi-star-fill" : "bi-star"
+                        }`}
+                      ></i>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <p className="fst-italic text-muted">“{t.text}”</p>
             </div>
-          ))}
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
 
 
     </div>
   );
 }
-
 export default Home;

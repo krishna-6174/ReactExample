@@ -15,30 +15,34 @@ export default function OrderSuccess() {
   const [showButtons, setShowButtons] = useState(false);
 
   useEffect(() => {
-    // 🎆 Controlled Confetti Burst
-    const count = 80;
-    const defaults = { origin: { y: 0.7 } };
-    function fire(particleRatio, opts) {
-      confetti({
-        ...defaults,
-        ...opts,
-        particleCount: Math.floor(count * particleRatio),
-      });
-    }
-    fire(0.25, { spread: 26, startVelocity: 55 });
-    fire(0.2, { spread: 60 });
-    fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
-    fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
-    fire(0.1, { spread: 120, startVelocity: 45 });
+  // Scroll to top when page loads
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
-    // 🔊 Play Success Sound
-    const audio = new Audio(successSound);
-    audio.play();
+  // 🎆 Controlled Confetti Burst
+  const count = 80;
+  const defaults = { origin: { y: 0.7 } };
+  function fire(particleRatio, opts) {
+    confetti({
+      ...defaults,
+      ...opts,
+      particleCount: Math.floor(count * particleRatio),
+    });
+  }
+  fire(0.25, { spread: 26, startVelocity: 55 });
+  fire(0.2, { spread: 60 });
+  fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+  fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+  fire(0.1, { spread: 120, startVelocity: 45 });
 
-    // Reveal animations with delay
-    setTimeout(() => setShowContent(true), 1200);
-    setTimeout(() => setShowButtons(true), 2200);
-  }, []);
+  // 🔊 Play Success Sound
+  const audio = new Audio(successSound);
+  audio.play();
+
+  // Reveal animations with delay
+  setTimeout(() => setShowContent(true), 1200);
+  setTimeout(() => setShowButtons(true), 2200);
+}, []);
+
 
   return (
     <div
