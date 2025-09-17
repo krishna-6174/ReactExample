@@ -29,7 +29,7 @@ const [timeLeft, setTimeLeft] = useState({});
     id: 2,
     title: "Buy 2 Get 1 Free",
     description: "Applicable on selected fruits.",
-    image: "/public/weekend.png",
+    image: "/weekend.png",
     endDate: "2025-09-12T23:59:59",
   },
 ];
@@ -58,16 +58,16 @@ const [timeLeft, setTimeLeft] = useState({});
   }, []);
 
  const products = [
-  { id: 4, name: "Apples", image: "/public/veg/apples.webp", price: 80 },
+  { id: 4, name: "Apples", image: "/veg/apples.webp", price: 80 },
    { id: 3, name: "Carrots", image: "/veg/carrot.png", price: 50, offerPrice: 45 },
  { id: 2, name: "Bendi", image: "/veg/bendi.png", price: 30 },
   { id: 1, name: "Fresh Tomatoes", image: "/veg/tomato.png", price: 40, offerPrice: 35 },
  
-  { id: 5, name: "Milk", image: "/public/milk/buffalo-milk.webp", price: 25 },
-  { id: 6, name: "Juice Drinks", image: "/public/drinks/orange-juice.png", price: 60 },
-  { id: 7, name: "Snacks", image: "/public/treats/murukku.webp", price: 35 },
-  { id: 8, name: "Fish", image: "/public/nonveg/fish.png", price: 150 },
-  { id: 9, name: "Medicines", image: "/public/medicines/cetirizine.png", price: 200 },
+  { id: 5, name: "Milk", image: "/milk/buffalo-milk.webp", price: 25 },
+  { id: 6, name: "Juice Drinks", image: "/drinks/orange-juice.png", price: 60 },
+  { id: 7, name: "Snacks", image: "/treats/murukku.webp", price: 35 },
+  { id: 8, name: "Fish", image: "/nonveg/fish.png", price: 150 },
+  { id: 9, name: "Medicines", image: "/medicines/cetirizine.png", price: 200 },
 ];
 
 
@@ -129,25 +129,25 @@ const testimonials = [
   {
     text: "Fresh fruits delivered right on time! Quality was amazing.",
     name: "Amit Sharma",
-    image: "/public/carasol/user3.webp",
+    image: "/carasol/user3.webp",
     rating: 5,
   },
   {
     text: "Loved the organic vegetables. Very fresh and affordable!",
     name: "Priya Patel",
-    image: "/public/carasol/user4.jpg",
+    image: "/carasol/user4.jpg",
     rating: 4,
   },
   {
     text: "Fast delivery and great packaging. Will order again.",
     name: "Rahul Verma",
-    image: "/public/carasol/user1.webp",
+    image: "/carasol/user1.webp",
     rating: 5,
   },
   {
     text: "Wide variety of grocery items at reasonable prices.",
     name: "Sneha Reddy",
-    image: "/public/carasol/user5.webp",
+    image: "/carasol/user5.webp",
     rating: 5,
   },
 ];

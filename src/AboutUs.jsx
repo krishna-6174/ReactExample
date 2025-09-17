@@ -81,7 +81,7 @@ function AboutUs() {
       <Section reference={harvestRef}>
         <Row className="align-items-center g-4 mb-5">
           <Col md={6}>
-            <img src="/public/carasol/vegetables.jpg" alt="Fresh Veg & Fruits" className="img-fluid rounded hover-scale" />
+            <img src="/carasol/vegetables.jpg" alt="Fresh Veg & Fruits" className="img-fluid rounded hover-scale" />
           </Col>
           <Col md={6}>
             <h2 className="fw-bold text-success mb-3">
@@ -102,7 +102,7 @@ function AboutUs() {
       <Section reference={drinksRef}>
         <Row className="align-items-center g-4 flex-md-row-reverse mb-5">
           <Col md={6}>
-            <img src="/public/carasol/drinks.jpg" alt="Drinks & Juices" className="img-fluid rounded hover-scale" />
+            <img src="/carasol/drinks.jpg" alt="Drinks & Juices" className="img-fluid rounded hover-scale" />
           </Col>
           <Col md={6}>
             <h2 className="fw-bold text-primary mb-3">
@@ -121,7 +121,7 @@ function AboutUs() {
       <Section reference={milkRef}>
         <Row className="align-items-center g-4 mb-5">
           <Col md={6}>
-            <img src="/public/carasol/classic-glass-bottle-milk.jpg" alt="Milk & Dairy" className="img-fluid rounded hover-scale" />
+            <img src="/carasol/classic-glass-bottle-milk.jpg" alt="Milk & Dairy" className="img-fluid rounded hover-scale" />
           </Col>
           <Col md={6}>
             <h2 className="fw-bold text-info mb-3">
@@ -140,7 +140,7 @@ function AboutUs() {
       <Section reference={treatsRef}>
         <Row className="align-items-center g-4 flex-md-row-reverse mb-5">
           <Col md={6}>
-            <img src="/public/carasol/snacks.jpg" alt="Treats & Snacks" className="img-fluid rounded hover-scale" />
+            <img src="/carasol/snacks.jpg" alt="Treats & Snacks" className="img-fluid rounded hover-scale" />
           </Col>
           <Col md={6}>
             <h2 className="fw-bold text-warning mb-3">
@@ -159,7 +159,7 @@ function AboutUs() {
       <Section reference={nonVegRef}>
         <Row className="align-items-center g-4 mb-5">
           <Col md={6}>
-            <img src="/public/carasol/nonveg.jpg" alt="Non-Veg" className="img-fluid rounded hover-scale" />
+            <img src="/carasol/nonveg.jpg" alt="Non-Veg" className="img-fluid rounded hover-scale" />
           </Col>
           <Col md={6}>
             <h2 className="fw-bold text-danger mb-3">
@@ -177,7 +177,7 @@ function AboutUs() {
       <Section reference={medicineRef}>
         <Row className="align-items-center g-4 flex-md-row-reverse mb-5">
           <Col md={6}>
-            <img src="/public/carasol/medicines.jpg" alt="Medicines & Health" className="img-fluid rounded hover-scale" />
+            <img src="/carasol/medicines.jpg" alt="Medicines & Health" className="img-fluid rounded hover-scale" />
           </Col>
           <Col md={6}>
             <h2 className="fw-bold text-secondary mb-3">
