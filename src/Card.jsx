@@ -57,7 +57,18 @@ const cartItem = cart.find((c) => c.id === item.id);
           <p className="card-text text-muted small product-description text-truncate-2">
             {item.description}
           </p>
-          <h6 className="price-tag fw-bold text-success">₹ {item.price}</h6>
+          <div className="price-tag d-flex flex-row justify-content-center mb-2 align-items-center">
+  {item.offerPrice ? (
+    <>
+      <h6 className="price-tag mb-0 text-primary me-2">₹{item.offerPrice}</h6>
+      <small className="text-muted">
+        <del>₹{item.price}</del>
+      </small>
+    </>
+  ) : (
+    <h6 className="price-tag text-primary mb-0">₹{item.price}</h6>
+  )}
+</div>
 
             {cartItem ? (
             <div className="quantity-control">

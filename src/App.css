@@ -7,20 +7,45 @@
 }
 
 
-.navbar .nav-link{
-  color: white;
-}
-/* Active link style */
-.navbar .nav-link.active {
-  color: #0d6efd !important; /* bootstrap primary blue */
-  font-weight: bold;
-  border-bottom: 2px solid #0d6efd;
-}
 
 /* Hover style */
 .navbar .nav-link:hover {
   color: #ffc107 !important; /* bootstrap warning yellow */
   transition: 0.3s;
+}
+.custom-navbar {
+  background-color: #2874f0 !important; /* Flipkart Blue */
+}
+
+.custom-navbar .nav-link {
+  color: #ffffff !important; /* White links */
+}
+.custom-navbar .nav-link:hover {
+  color: yellow !important; /* White links */
+}
+
+.custom-navbar .nav-link.active {
+  font-weight:bold;
+  border-bottom: 2px solid #fff; /* Active link highlight */
+}
+/* Global font */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f3f6;
+}
+
+/* Header titles */
+h1, h2, h3, .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* bold */
+  letter-spacing: 0.5px;
+}
+
+/* Navbar brand/logo */
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
 
@@ -32,6 +57,7 @@
     padding: 0.75rem 0.5rem;
     background-color: #1b1f24; /* slightly darker */
   }
+
 
   .navbar-brand {
     font-weight: 600;

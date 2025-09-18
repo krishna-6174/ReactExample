@@ -23,7 +23,18 @@ function Harvest() {
   };
 
   return (
-    <div className="container-fluid bg-light my-4">
+    <div className="container-fluid my-4" style={{color:"#f1f3f6"}}>
+
+      {/* Title Section - Harvest */}
+<div className="text-center mb-4">
+  <h2 className="fw-bold text-success">Fruits & Vegetables</h2>
+  <p className="text-muted">
+    Enjoy the freshness of handpicked fruits and farm-grown vegetables, delivered straight to your kitchen every day!
+  </p>
+</div>
+
+
+
       <div className="row g-4 mb-4">
         {currentItems.map((item) => (
           <Card key={item.id} item={item} />

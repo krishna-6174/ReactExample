@@ -27,7 +27,7 @@ function Treats() {
     <div className="container-fluid bg-light my-4">
       {/* Title Section */}
       <div className="text-center mb-4">
-        <h2 className="fw-bold text-primary">Treats & Snacks</h2>
+        <h2 className="fw-bold text-warning">Treats & Snacks</h2>
         <p className="text-muted">
           Indulge yourself with our delicious range of sweets, chocolates, cookies, and savory snacks!
         </p>

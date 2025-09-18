@@ -29,6 +29,19 @@ const productsSlice = createSlice({
     reviewCount: 175,
     inStock: true,
   },
+ 
+  {
+    id: 52,
+    title: "Red Apples",
+    description:
+      "Crisp and juicy red apples packed with vitamins and antioxidants. Great as a snack, in fruit salads, or for making fresh juice.",
+    price: 120,
+    offerPrice: 110,
+    image: "/veg/apples.jpg",
+    rating: 4.7,
+    reviewCount: 280,
+    inStock: true,
+  },
   {
     id: 3,
     title: "Ladies Finger (Bhindi)",
@@ -101,6 +114,18 @@ const productsSlice = createSlice({
     reviewCount: 185,
     inStock: true,
   },
+   {
+    id: 50,
+    title: "Bananas",
+    description:
+      "Naturally sweet bananas, rich in potassium and fiber. Great for smoothies, snacks, or as an instant energy booster. Freshly harvested and chemical-free.",
+    price: 60,
+    offerPrice: 55,
+    image: "/veg/banana.webp",
+    rating: 4.6,
+    reviewCount: 320,
+    inStock: true,
+  },
   {
     id: 9,
     title: "Brinjal (Baingan)",
@@ -135,6 +160,18 @@ const productsSlice = createSlice({
     image: "/veg/peas.png",
     rating: 4.8,
     reviewCount: 245,
+    inStock: true,
+  },
+  {
+    id: 51,
+    title: "Alphonso Mangoes",
+    description:
+      "Juicy, aromatic Alphonso mangoes with unbeatable sweetness. Perfect for milkshakes, desserts, and summer treats. Carefully handpicked to ensure premium quality.",
+    price: 150,
+    offerPrice: 135,
+    image: "/veg/mango.webp",
+    rating: 4.8,
+    reviewCount: 210,
     inStock: true,
   },
   {
@@ -173,6 +210,19 @@ const productsSlice = createSlice({
     reviewCount: 145,
     inStock: true,
   },
+   {
+    id: 53,
+    title: "Seedless Grapes",
+    description:
+      "Sweet and refreshing seedless grapes, perfect for snacking, fruit salads, and desserts. Loaded with natural antioxidants and vitamins.",
+    price: 90,
+    offerPrice: 82,
+    image: "/veg/grapes.webp",
+    rating: 4.5,
+    reviewCount: 190,
+    inStock: true,
+  },
+  
   {
     id: 15,
     title: "Coriander Leaves (Dhaniya)",
@@ -231,6 +281,18 @@ const productsSlice = createSlice({
     image: "/veg/pumpkin.png",
     rating: 4.4,
     reviewCount: 90,
+    inStock: true,
+  },
+  {
+    id: 54,
+    title: "Watermelon",
+    description:
+      "Juicy and hydrating watermelon, naturally sweet and refreshing. Perfect for hot summer days, salads, or fresh juices.",
+    price: 80,
+    offerPrice: 70,
+    image: "/veg/watermelon.webp",
+    rating: 4.6,
+    reviewCount: 165,
     inStock: true,
   },
   {
@@ -891,7 +953,7 @@ medicineItems : [
     discount: 10,
     rating: 4.6,
     reviewCount: 410,
-    image: "/medicines/azithromycin.png",
+    image: "/medicines/azithromycin.webp",
     inStock: true,
   },
   {
@@ -903,7 +965,7 @@ medicineItems : [
     discount: 12,
     rating: 4.8,
     reviewCount: 720,
-    image: "/medicines/pain-spray.png",
+    image: "/medicines/pain-relief.webp",
     inStock: true,
   },
   {
@@ -915,7 +977,7 @@ medicineItems : [
     discount: 5,
     rating: 4.7,
     reviewCount: 550,
-    image: "/medicines/digene.png",
+    image: "/medicines/digene.jpg",
     inStock: true,
   },
   {
@@ -927,7 +989,7 @@ medicineItems : [
     discount: 5,
     rating: 4.9,
     reviewCount: 420,
-    image: "/medicines/ors-bottle.png",
+    image: "/medicines/ors.webp",
     inStock: true,
   },
   {
@@ -939,7 +1001,7 @@ medicineItems : [
     discount: 10,
     rating: 4.8,
     reviewCount: 280,
-    image: "/medicines/insulin.png",
+    image: "/medicines/insulin.jpg",
     inStock: true,
   },
   {
@@ -951,7 +1013,7 @@ medicineItems : [
     discount: 15,
     rating: 4.6,
     reviewCount: 320,
-    image: "/medicines/glucometer-strips.png",
+    image: "/medicines/glucometer.png",
     inStock: true,
   },
   {
@@ -963,7 +1025,7 @@ medicineItems : [
     discount: 10,
     rating: 4.7,
     reviewCount: 700,
-    image: "/medicines/bandage.png",
+    image: "/medicines/bandages.png",
     inStock: true,
   },
   {
@@ -975,7 +1037,7 @@ medicineItems : [
     discount: 8,
     rating: 4.8,
     reviewCount: 650,
-    image: "/medicines/antiseptic.png",
+    image: "/medicines/anti-septic.png",
     inStock: true,
   },
   {
@@ -987,7 +1049,7 @@ medicineItems : [
     discount: 10,
     rating: 4.8,
     reviewCount: 480,
-    image: "/medicines/vitamin-d3.png",
+    image: "/medicines/vitamin-d3.jpg",
     inStock: true,
   },
   {
@@ -1011,7 +1073,7 @@ medicineItems : [
     discount: 8,
     rating: 4.6,
     reviewCount: 370,
-    image: "/medicines/iron.png",
+    image: "/medicines/iron.webp",
     inStock: true,
   },
   {
@@ -1023,7 +1085,7 @@ medicineItems : [
     discount: 5,
     rating: 4.9,
     reviewCount: 600,
-    image: "/medicines/electrolyte.png",
+    image: "/medicines/hydration.webp",
     inStock: true,
   },
   {
@@ -1047,7 +1109,7 @@ medicineItems : [
     discount: 10,
     rating: 4.6,
     reviewCount: 320,
-    image: "/medicines/thermometer.png",
+    image: "/medicines/thermometer.webp",
     inStock: true,
   },
 ],
@@ -1543,7 +1605,7 @@ drinkItems: [
     discount: 8,
     rating: 4.7,
     reviewCount: 820,
-    image: "/treats/mathri.png",
+    image: "/treats/mathri.webp",
     inStock: true,
   },
   {
@@ -1555,7 +1617,7 @@ drinkItems: [
     discount: 7,
     rating: 4.8,
     reviewCount: 700,
-    image: "/treats/khakhra.png",
+    image: "/treats/khakhra.jpg",
     inStock: true,
   },
   {
@@ -1567,7 +1629,7 @@ drinkItems: [
     discount: 6,
     rating: 4.6,
     reviewCount: 650,
-    image: "/treats/sev.png",
+    image: "/treats/sev.jpg",
     inStock: true,
   },
   {
@@ -1579,7 +1641,7 @@ drinkItems: [
     discount: 8,
     rating: 4.7,
     reviewCount: 750,
-    image: "/treats/bhakarwadi.png",
+    image: "/treats/bhakarwadi.webp",
     inStock: true,
   },
   {
@@ -1591,7 +1653,7 @@ drinkItems: [
     discount: 7,
     rating: 4.8,
     reviewCount: 980,
-    image: "/treats/chakli.png",
+    image: "/treats/chakli.webp",
     inStock: true,
   },
   {
@@ -1623,8 +1685,14 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const item = action.payload;
+      const exists = state.find((i) => i.id === item.id);
+      if (exists) {
+        exists.quantity += 1;
+      }
+      else{
       state.push({ ...item, quantity: 1 });
-      localStorage.setItem("cart", JSON.stringify(state)); // ✅ Fix: save array, not object
+      }
+       localStorage.setItem("cart", JSON.stringify(state)); // ✅ Fix: save array, not object
     },
     incrementQuantity: (state, action) => {
       const item = state.find((i) => i.id === action.payload.id);

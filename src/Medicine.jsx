@@ -25,6 +25,15 @@ function Medicine() {
 
   return (
     <div className="container-fluid my-4">
+
+      {/* Title Section - Medicines */}
+<div className="text-center mb-4">
+  <h2 className="fw-bold text-secondary">Medicines & Health</h2>
+  <p className="text-muted">
+    Ensure your well-being with our trusted collection of medicines, supplements, and healthcare essentials.
+  </p>
+</div>
+
       <div className="row g-4 mb-4">
         {currentItems.map((item) => (
           <Card key={item.id} item={item} />

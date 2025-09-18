@@ -268,112 +268,37 @@
   }
 }
 
-/* Offer Card */
 .offer-card {
-  border-radius: 12px;
-  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
 .offer-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Image wrapper */
-.offer-img-wrapper {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.offer-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.offer-card:hover .offer-img-wrapper img {
-  transform: scale(1.1);
-}
-
-/* Overlay */
+/* Overlay only for desktop */
 .offer-overlay {
   position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
-  border-radius: 12px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(40, 116, 240, 0.85); /* Flipkart blue overlay */
   color: #fff;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
 }
 
-/* Titles & Text */
-.offer-overlay .card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
+.offer-card:hover .offer-overlay {
+  transform: translateY(0);
 }
 
-.offer-overlay .card-text {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-}
-
-.offer-overlay .countdown {
-  color: #ffcc00;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Button */
-.offer-overlay .btn {
-  align-self: start;
-  font-weight: 600;
-  padding: 0.4rem 0.8rem;
+.offer-img {
   border-radius: 6px;
-  transition: transform 0.2s ease;
 }
 
-.offer-overlay .btn:hover {
-  transform: scale(1.05);
-}
 
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .offer-overlay .card-title {
-    font-size: 1.1rem;
-  }
-  .offer-overlay .card-text {
-    font-size: 0.85rem;
-  }
-}
 
-@media (max-width: 768px) {
-  .offer-overlay .card-title {
-    font-size: 1rem;
-  }
-  .offer-overlay .card-text {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .offer-card {
-    margin-bottom: 1.5rem; /* space between stacked cards */
-  }
-  .offer-overlay .card-title {
-    font-size: 0.95rem;
-  }
-  .offer-overlay .card-text {
-    font-size: 0.75rem;
-  }
-  .offer-img-wrapper {
-    height: 200px; /* slightly smaller for mobile */
-  }
+.custom-bg{
+color :#f1f3f6
 }

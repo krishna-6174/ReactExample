@@ -30,24 +30,40 @@ export default function Wishlist() {
   
 
   if (wishlist.length === 0) {
-    return (
-      <div className="container my-5">
-        <div className="d-flex flex-column align-items-center justify-content-center">
-          <img
-            src="/empty-wishlist.png"
-            alt="Empty Wishlist"
-            className="mb-3"
-            style={{ maxWidth: "160px" }}
-          />
-          <h4>Your Wishlist is Empty</h4>
-          <p className="text-muted">Save your favorite items here for later.</p>
-          <button className="btn btn-primary mt-2" onClick={() => navigate("/")}>
-            Start Shopping
-          </button>
-        </div>
+  return (
+    <div className="container my-5 d-flex justify-content-center">
+      <div className="d-flex flex-column align-items-center justify-content-center bg-white shadow-lg rounded-5 p-4 p-md-5 text-center" style={{ maxWidth: "400px", width: "100%" }}>
+        {/* Empty Wishlist Image */}
+        <img
+          src="/empty-wishlist.png"
+          alt="Empty Wishlist"
+          className="mb-4 img-fluid"
+          style={{ maxWidth: "250px" }}
+        />
+
+        {/* Main Heading */}
+        <h4 className="text-danger mb-2">💔 Your wishlist is feeling lonely! 🌟</h4>
+
+        {/* Funny Subtext */}
+        <p className="text-muted mb-4 small">
+         💭 It’s waiting for your favorite goodies… don’t leave it hanging! 🎁✨
+        </p>
+
+        {/* CTA Button */}
+        <button
+          className="btn btn-outline-primary rounded-pill px-4 py-2"
+          style={{ transition: "all 0.3s" }}
+          onMouseEnter={e => e.currentTarget.classList.add("btn-success", "text-white")}
+          onMouseLeave={e => e.currentTarget.classList.remove("btn-success", "text-white")}
+          onClick={() => navigate("/")}
+        >
+          Find Your Favorites
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   return (
     <div className="container my-4">

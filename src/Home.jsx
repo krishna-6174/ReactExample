@@ -6,33 +6,48 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import { useEffect } from "react";
+import { useMemo } from "react";
 import './Home.css'
 import {  Navigation } from "swiper/modules";
-
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
+import { toast } from "react-toastify";
+import { addToCart } from "./store";
+import { useSelector } from "react-redux";
 
 
 function Home() {
 const isMobile = useMediaQuery({ maxWidth: 480 }); // Mobile: <= 768px
 const [timeLeft, setTimeLeft] = useState({});
   const categoriesRef = useRef(null);
-  const offers = [
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const addDays = (days) => {
+  const now = new Date();
+  now.setDate(now.getDate() + days);
+  return now.toISOString();
+};
+  const offers = useMemo(() => {
+  return [
   {
     id: 1,
     title: "Weekend Sale!",
     description: "Up to 30% off on all vegetables.",
-    image: "/offers/vegetable-sale.jpg",
-    endDate: "2025-09-15T23:59:59",
+    image: "/weekend.png",
+     endDate: addDays(2),
   },
   {
+    
     id: 2,
     title: "Buy 2 Get 1 Free",
     description: "Applicable on selected fruits.",
-    image: "/weekend.png",
-    endDate: "2025-09-12T23:59:59",
+    image: "/buu1get1.png",
+     endDate: addDays(3),
   },
 ];
+}, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -55,20 +70,25 @@ const [timeLeft, setTimeLeft] = useState({});
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [offers]);
 
  const products = [
-  { id: 4, name: "Apples", image: "/veg/apples.webp", price: 80 },
-   { id: 3, name: "Carrots", image: "/veg/carrot.png", price: 50, offerPrice: 45 },
- { id: 2, name: "Bendi", image: "/veg/bendi.png", price: 30 },
-  { id: 1, name: "Fresh Tomatoes", image: "/veg/tomato.png", price: 40, offerPrice: 35 },
- 
-  { id: 5, name: "Milk", image: "/milk/buffalo-milk.webp", price: 25 },
-  { id: 6, name: "Juice Drinks", image: "/drinks/orange-juice.png", price: 60 },
-  { id: 7, name: "Snacks", image: "/treats/murukku.webp", price: 35 },
-  { id: 8, name: "Fish", image: "/nonveg/fish.png", price: 150 },
-  { id: 9, name: "Medicines", image: "/medicines/cetirizine.png", price: 200 },
+  // Harvest (Veg & Fruits)
+  { id: 1, title: "Fresh Tomatoes", description: "Farm-fresh juicy red tomatoes, rich in Vitamin C and perfect for curries, salads, soups, and sauces.", price: 40, offerPrice: 35, image: "/veg/tomato.png", rating: 4.5, reviewCount: 210, inStock: true },
+  { id: 420, title: "Fresh Orange Juice", description: "100% freshly squeezed oranges, rich in Vitamin C and natural sweetness. Perfect immunity booster.", price: 90, discount: 8, rating: 4.9, reviewCount: 820, image: "/drinks/orange-juice.png", inStock: true },
+  { id: 203, title: "Double Toned Milk", description: "Low-fat double toned milk, great for fitness-conscious individuals. Keeps you light while maintaining nutrition.", price: 45, discount: 8, rating: 4.4, reviewCount: 390, image: "/milk/double-toned.webp", inStock: true },
+  { id: 102, title: "Premium Mutton", description: "Soft and flavorful mutton sourced from grass-fed goats. Ideal for slow-cooked curries, biryanis, and weekend feasts.", price: 550, offerPrice: 520, image: "/nonveg/mutton.webp", rating: 4.7, reviewCount: 320, inStock: true },
+  { id: 308, title: "Cough Syrup", description: "Relieves both dry and wet cough, soothes throat irritation, and provides quick comfort for respiratory issues.", price: 90, discount: 7, rating: 4.5, reviewCount: 640, image: "/medicines/cough-syrup.webp", inStock: true },
+  { id: 512, title: "Murukku", description: "Traditional South Indian crispy spiral snack made from rice flour and spices. Crunchy, savory, and addictive.", price: 140, discount: 7, rating: 4.7, reviewCount: 950, image: "/treats/murukku.webp", inStock: true },
+ { id: 5, title: "Desi Carrots", description: "Bright orange, crunchy carrots full of natural sweetness and antioxidants. Excellent for salads, juices, stir-fries, and soups.", price: 45, offerPrice: 40, image: "/veg/carrot.png", rating: 4.6, reviewCount: 260, inStock: true },
+{ id: 413, title: "Monster Energy", description: "High-performance energy drink with a bold flavor and extra caffeine boost. Popular among gamers and athletes.", price: 130, discount: 7, rating: 4.6, reviewCount: 2200, image: "/drinks/monster.jpg", inStock: true },
+{ id: 206, title: "Buffalo Milk", description: "Thick and creamy buffalo milk, rich in calcium and flavor. Best for making curd, paneer, and sweets.", price: 65, discount: 7, rating: 4.5, reviewCount: 350, image: "/milk/buffalo-milk.webp", inStock: true },
+ { id: 103, title: "Fresh River Fish", description: "Delicious river fish, rich in protein and omega-3, perfect for frying, steaming, or spicy fish curries.", price: 300, offerPrice: 280, image: "/nonveg/fish.png", rating: 4.4, reviewCount: 210, inStock: true },
+{ id: 303, title: "Amoxicillin", description: "A powerful antibiotic used to treat bacterial infections like throat infection, pneumonia, and ear infections. Always use under prescription.", price: 120, discount: 10, rating: 4.5, reviewCount: 560, image: "/medicines/amoxicillin.png", inStock: true },
+{ id: 501, title: "Rasgulla", description: "Delicate and spongy cottage cheese balls soaked in light sugar syrup. A melt-in-mouth treat that is light, refreshing, and perfect after meals.", price: 110, discount: 7, rating: 4.8, reviewCount: 980, image: "/treats/rasagulla.webp", inStock: true },
 ];
+
+
 
 
 // Group products into slides (3 per slide on desktop)
@@ -77,28 +97,9 @@ const [timeLeft, setTimeLeft] = useState({});
   for (let i = 0; i < products.length; i += chunkSize) {
     slides.push(products.slice(i, i + chunkSize));
   }
+ const cart = useSelector((state) => state.cart);
 
-// Active slide state
-  const [activeIndex, setActiveIndex] = useState(0);
-  const carouselRef = useRef(null);
 
-  useEffect(() => {
-    if (!carouselRef.current) return;
-
-    const carouselEl = carouselRef.current;
-
-    // Listen for Bootstrap slide event
-    const handleSlide = (e) => {
-      const nextIndex = parseInt(e.to);
-      setActiveIndex(nextIndex);
-    };
-
-    carouselEl.addEventListener("slide.bs.carousel", handleSlide);
-
-    return () => {
-      carouselEl.removeEventListener("slide.bs.carousel", handleSlide);
-    };
-  }, []);
 
 
  
@@ -161,9 +162,15 @@ const testimonials = [
         }
 
 
+ const handleAddToCart = (item) => {
+     dispatch(addToCart(item));
+     toast.info(`${item.title} added to cart!`);
+   };
+
+
 
   return (
-    <div className="container-fluid p-0 bg-light">
+    <div className="container-fluid p-0 custom-bg">
      <div className="hero-container">
       {/* image */}
       <img
@@ -202,107 +209,129 @@ const testimonials = [
 
 
     {/*option 2*/}
-    <section className="container-fluid my-5">
-      <h2 className="text-center fw-bold mb-4">Featured Products</h2>
+   <section className="container-fluid my-5">
+  <h2 className="text-center fw-bold mb-4 text-dark">Featured Products</h2>
 
-      {!isMobile ? (
+  {/* Get IDs of items in cart */}
+  {(() => {
+    const cartIds = cart?.map(item => item.id) || [];
 
+    return !isMobile ? (
+      // ---------- Desktop Swiper ----------
       <div className="m-4">
-      
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={4}
-            
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 4000 }}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              500: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 },
-            }}
-            className="custom-swiper"
-          >
-            
-            {slides.flat().map((product) => (
-              <SwiperSlide key={product.id}>
-                <Card className="text-center shadow-sm border-0" style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={product.image}
-                    style={{ height: "180px", objectFit: "contain", borderRadius: "10px" }}
-                  />
-                  <Card.Body>
-                    <Card.Title className="text-truncate">{product.name}</Card.Title>
-                    <Card.Text>
-                      {product.offerPrice ? (
-                        <>
-                          <span className="text-danger fw-bold">₹{product.offerPrice}</span>{" "}
-                          <del className="text-muted">₹{product.price}</del>
-                        </>
-                      ) : (
-                        <span className="fw-bold">₹{product.price}</span>
-                      )}
-                    </Card.Text>
-                    <Button variant="primary">Add to Cart</Button>
-                  </Card.Body>
-                  
-                </Card>
-                
-              </SwiperSlide>
-            ))}
-            
-          </Swiper>
-        </div>
-          
-      ) : (
-        // ---------- Mobile Horizontal Scroll ----------
-        <div className="d-flex gap-3 pb-2 px-2 overflow-auto" style={{ scrollSnapType: "x mandatory" }}>
-          <style>
-            {`
-              div::-webkit-scrollbar { display: none; }
-            `}
-          </style>
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="card shadow-sm flex-shrink-0 border-0"
-              style={{
-                width: "70vw",
-                scrollSnapAlign: "start",
-                borderRadius: "15px",
-                overflow: "hidden",
-              }}
-            >
-              <img
-                src={product.image}
-                className="card-img-top"
-                alt={product.name}
-                style={{ height: "180px", objectFit: "contain" }}
-              />
-              <div className="card-body text-center">
-                <h6 className="card-title fw-bold">{product.name}</h6>
-                <p className="card-text">
-                  {product.offerPrice ? (
-                    <>
-                      <span className="text-danger fw-bold"> ₹{product.offerPrice}</span>{" "}
-                      <del className="text-muted"> ₹{product.price}</del>
-                    </>
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={4}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 4000 }}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            500: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+          className="custom-swiper"
+        >
+          {slides.flat().map((product) => (
+            <SwiperSlide key={product.id}>
+              <Card className="text-center shadow-sm border-0" style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  src={product.image}
+                  style={{ height: "180px", objectFit: "contain", borderRadius: "10px" }}
+                />
+                <Card.Body>
+                  <Card.Title className="text-truncate">{product.title}</Card.Title>
+                  <Card.Text>
+                    {product.offerPrice ? (
+                      <>
+                        <span className="text-danger fw-bold">₹{product.offerPrice}</span>{" "}
+                        <del className="text-muted">₹{product.price}</del>
+                      </>
+                    ) : (
+                      <span className="fw-bold">₹{product.price}</span>
+                    )}
+                  </Card.Text>
+
+                  {/* Conditional button */}
+                  {cartIds.includes(product.id) ? (
+                    <Button variant="outline-dark" onClick={() => navigate("/cart")}>
+                      🛒 Go to Cart
+                    </Button>
                   ) : (
-                    <span className="fw-bold">₹{product.price}</span>
+                    <Button variant="primary" onClick={() => handleAddToCart(product)}>
+                      Add to Cart
+                    </Button>
                   )}
-                </p>
-                <Button variant="primary" size="sm">Add to Cart</Button>
-              </div>
-            </div>
+                </Card.Body>
+              </Card>
+            </SwiperSlide>
           ))}
-        </div>
-      )}
-    </section>
- 
+        </Swiper>
+      </div>
+    ) : (
+      // ---------- Mobile Horizontal Scroll ----------
+      <div
+        className="d-flex gap-3 pb-2 px-2 overflow-auto"
+        style={{ scrollSnapType: "x mandatory" }}
+      >
+        <style>
+          {`
+            div::-webkit-scrollbar { display: none; }
+          `}
+        </style>
+
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="card shadow-sm flex-shrink-0 border-0"
+            style={{
+              width: "70vw",
+              scrollSnapAlign: "start",
+              borderRadius: "15px",
+              overflow: "hidden",
+            }}
+          >
+            <img
+              src={product.image}
+              className="card-img-top"
+              alt={product.name}
+              style={{ height: "180px", objectFit: "contain" }}
+            />
+            <div className="card-body text-center">
+              <h6 className="card-title fw-bold">{product.name}</h6>
+              <p className="card-text">
+                {product.offerPrice ? (
+                  <>
+                    <span className="text-danger fw-bold"> ₹{product.offerPrice}</span>{" "}
+                    <del className="text-muted"> ₹{product.price}</del>
+                  </>
+                ) : (
+                  <span className="fw-bold">₹{product.price}</span>
+                )}
+              </p>
+
+              {/* Conditional button */}
+              {cartIds.includes(product.id) ? (
+                <Button variant="outline-dark" size="sm" onClick={() => navigate("/cart")}>
+                  🛒 Go to Cart
+                </Button>
+              ) : (
+                <Button variant="primary" size="sm" onClick={() => handleAddToCart(product)}>
+                  Add to Cart
+                </Button>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  })()}
+</section>
+
     <section ref={categoriesRef} className="container py-5">
-      <h2 className="text-center fw-bold mb-4">🛍 Shop by Category</h2>
+      <h2 className="text-center fw-bold mb-4 text-dark">🛍 Shop by Category</h2>
 
       {/* ---------- DESKTOP/TABLET VIEW (Bootstrap Carousel) ---------- */}
        {!isMobile && (
@@ -457,7 +486,7 @@ const testimonials = [
 
       {/* ---------- Why Choose Us Section ---------- */}
       <div className="container my-5">
-      <h2 className="text-center fw-bold mb-4">Why Choose Us</h2>
+      <h2 className="text-center fw-bold mb-4 text-dark">Why Choose Us</h2>
       <div className="row">
         {features.map((feature, index) => (
           <div key={index} className="col-md-4 mb-4">
@@ -474,26 +503,46 @@ const testimonials = [
 
 
           {/*option 4*/}
-          <div className="container my-5">
-  <h2 className="mb-4 text-center fw-bold">🔥 Special Offers</h2>
+         <div className="container my-5">
+  {/* Section Title */}
+  <h2 className="mb-4 text-center fw-bold text-dark">
+    🔥 Special Offers
+  </h2>
 
   <div className="row g-4 justify-content-center">
     {offers.map((offer) => (
-      <div
-        key={offer.id}
-        className="col-lg-4 col-md-6 col-12"
-      >
-        <Card className="offer-card shadow-sm h-100 position-relative text-white">
-          <div className="offer-img-wrapper">
-            <Card.Img src={offer.image} alt={offer.title} />
-            <div className="offer-overlay">
-              <Card.Title>{offer.title}</Card.Title>
-              <Card.Text>{offer.description}</Card.Text>
-              <Card.Text className="fw-bold countdown">
-                Ends in: {timeLeft[offer.id]}
-              </Card.Text>
-              <Button variant="light" size="sm">Shop Now</Button>
-            </div>
+      <div key={offer.id} className="col-lg-4 col-md-6 col-12">
+        <Card className="offer-card border-0 shadow-lg h-100 rounded-3 overflow-hidden">
+          {/* Image */}
+          <Card.Img
+            src={offer.image}
+            alt={offer.title}
+            className="offer-img img-fluid"
+            style={{ height: "250px", width:"700px", objectFit: "cover" }}
+          />
+
+          {/* Overlay (desktop) + Info (mobile) */}
+          <div className="offer-overlay d-none d-md-flex flex-column justify-content-center align-items-center text-center p-3">
+            <h5 className="fw-bold">{offer.title}</h5>
+            <p className="small mb-2">{offer.description}</p>
+            <Card.Text className="fw-bold countdown mb-2">
+              Ends in: {timeLeft[offer.id]}
+            </Card.Text>
+            <Button variant="light" size="sm" className="fw-bold px-3">
+              Shop Now
+            </Button>
+          </div>
+
+          {/* Mobile Info (always visible) */}
+          <div className="d-flex d-md-none flex-column text-center bg-light p-3">
+            <h6 className="fw-bold text-dark">{offer.title}</h6>
+            <p className="small text-muted mb-1">{offer.description}</p>
+            <Card.Text className="fw-bold text-danger mb-2">
+              Ends in: {timeLeft[offer.id]}
+            </Card.Text>
+            <Button variant="primary" size="sm" className="fw-bold px-3">
+              Shop Now
+            </Button>
           </div>
         </Card>
       </div>
@@ -504,7 +553,7 @@ const testimonials = [
 
 
  <div className="container my-5">
-      <h2 className="text-center fw-bold mb-4 text-success">
+      <h2 className="text-center  fw-bold mb-4 text-success">
         Happy Customers
       </h2>
 

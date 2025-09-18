@@ -59,7 +59,7 @@ import { useSelector } from 'react-redux';
 import { CandyIcon, LogInIcon } from "lucide-react";
 
 function App() {
-  const [showSearch, setShowSearch] = useState(false);
+ 
   const cartCount = useSelector(
     (state) => state.cart.reduce((sum, item) => sum + item.quantity, 0)
   );
@@ -83,16 +83,16 @@ function App() {
 
 
         {/* ✅ Navbar */}
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm custom-navbar px-2">
+        <nav className="navbar navbar-expand-md shadow-sm custom-navbar px-2">
           <div className="container-fluid px-1">
             {/* Left toggle button (mobile/tablet only) */}
-            <button className="btn btn-dark d-lg-none p-0 me-2" onClick={toggleSidebar}>
+            <button className="btn btn-bg-transparent text-white d-md-none p-0 me-2" onClick={toggleSidebar}>
             <i class="bi bi-list fs-1"></i>
             </button>
 
             {/* Normal navbar links (desktop only) */}
-            <div className="collapse navbar-collapse d-none d-lg-flex">
-              <ul className="navbar-nav text-white fs-6 me-auto mb-2 mb-lg-0">
+            <div className="collapse navbar-collapse d-md-none d-lg-flex">
+              <ul className="navbar-nav  fs-6 me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <NavLink to="/" end className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>
                     <HomeFilledIcon className="me-0" /> Home
@@ -100,7 +100,7 @@ function App() {
                 </li>
                 <li className="nav-item">
                   <NavLink to="/aboutus" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>
-                    <InfoRoundedIcon className="me-0" /> About Us
+                    <InfoRoundedIcon className="me-0" /> AboutUs
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -144,7 +144,8 @@ function App() {
           
 
               {/* Right links */}
-              <ul className="navbar-nav ms-auto">
+              <ul className="navbar-nav ms-auto d-none d-lg-flex">
+
                 
 
                 <li className="nav-item">
@@ -160,41 +161,27 @@ function App() {
               </ul>
             </div>
 
-                 <div className="d-flex d-md-none align-items-center justify-content-end">
-      <div
-        className={`transition-container ${showSearch ? "open" : ""}`}
-        style={{
-          overflow: "hidden",
-          maxWidth: showSearch ? "500px" : "0px",
-          transition: "max-width 0.3s ease-in-out",
-          flexGrow: 1,
-        }}
-      >
-        {showSearch && (
-          <InputGroup className="flex-grow-1">
-            <FormControl
-              type="text"
-              placeholder="Search products..."
-              className="form-control-sm"
-              autoFocus
-            />
-            <InputGroup.Text
-              className="bg-primary text-white cursor-pointer"
-              onClick={() => setShowSearch(false)}
-            >
-              <CloseIcon fontSize="small" />
-            </InputGroup.Text>
-          </InputGroup>
-        )}
-      </div>
+    <div className="d-flex d-md-none w-75 align-items-center justify-content-end flex-grow-1">
+     <div className="flex-grow-1 px-2">
+  <InputGroup className="rounded-pill overflow-hidden shadow-sm">
+    <InputGroup.Text className="bg-white border-0">
+      <SearchIcon style={{ color: "#888" }} />
+    </InputGroup.Text>
+    <FormControl
+      type="text"
+      placeholder="Search products..."
+      className="border-0"
+      style={{ boxShadow: "none" }}
+    />
+    <InputGroup.Text
+      className="bg-white border-0 cursor-pointer"
+      onClick={() => console.log("Clear search")}
+    >
+      {/* <CloseIcon style={{ color: "#888", fontSize: "1rem" }} /> */}
+    </InputGroup.Text>
+  </InputGroup>
+</div>
 
-      {!showSearch && (
-        <SearchIcon
-          className="cursor-pointer"
-          onClick={() => setShowSearch(true)}
-          style={{ fontSize: "1.8rem", color: "#fff", transition: "all 0.3s" }}
-        />
-      )}
     </div>
 
 

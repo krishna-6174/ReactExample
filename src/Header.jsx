@@ -12,35 +12,73 @@ export default function Header({ cartCount, wishlistCount }) {
   const location = useLocation();
   
   // Get user from global state
-  const user = useSelector((state) => state.users.isAuthenticated);
-  console.log(user);
+  const {isAuthenticated,currentUser} = useSelector((state) => state.users);
+  
 
   const getIconClass = (path) =>
-    location.pathname === path ? "text-primary" : "text-white";
+    location.pathname === path ? "text-primary" : "text-dark";
 
   return (
-    <header className="bg-dark text-white py-2 shadow-sm">
+    <header className="bg-white text-dark py-2 shadow-sm">
       <Container fluid>
         <Row className="align-items-center">
           {/* LEFT: Logo + Brand */}
+        
           <Col xs={6} md={3} className="d-flex align-items-center">
-            <i className="bi bi-shop fs-2 me-2 ms-lg-3"></i>
-            <span className="fs-2 fw-bold  d-block">MiniMart</span>
-          </Col>
+  <NavLink
+    to="/"
+    className="d-flex align-items-center text-decoration-none text-reset"
+    style={{ cursor: "pointer" }}
+  >
+    <i className="bi bi-shop fs-2 me-2 ms-lg-3"></i>
+    <span className="fs-2 fw-bold">MiniMart</span>
+  </NavLink>
+</Col>
+
+         
 
           {/* MIDDLE: Search Bar (hidden < 770px) */}
-          <Col xs={12} md={6} className="my-2 my-md-0 d-none d-md-block">
-            <InputGroup>
-              <FormControl
-                type="text"
-                placeholder="Search products..."
-                className="form-control-sm"
-              />
-              <InputGroup.Text className="bg-primary text-white">
-                <SearchIcon fontSize="small" />
-              </InputGroup.Text>
-            </InputGroup>
-          </Col>
+       <Col xs={12} md={6} className="my-2 my-md-0 d-none d-md-block">
+  <InputGroup className="shadow-sm rounded-pill overflow-hidden">
+    {/* Search Icon (Left) */}
+    <InputGroup.Text
+      className="border-0 px-3"
+      style={{
+        backgroundColor: "#2874f0", // Flipkart Blue
+        cursor: "pointer",
+      }}
+    >
+      <SearchIcon style={{ color: "#fff" }} />
+    </InputGroup.Text>
+
+    {/* Input */}
+    <FormControl
+      type="text"
+      placeholder="Search for products, brands and more..."
+      className="border-0 px-3 py-2"
+      style={{
+        boxShadow: "none",
+        backgroundColor: "#f1f3f6", // Light gray background
+      }}
+    />
+
+    {/* Mic Button (Right) */}
+    <InputGroup.Text
+      className="border-0 px-3"
+      style={{
+        backgroundColor: "#f1f3f6", // Match input background
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+      }}
+    >
+      <i className="bi bi-mic fs-5 text-secondary"></i>
+    </InputGroup.Text>
+  </InputGroup>
+</Col>
+
+
+
+
 
           {/* RIGHT: Icons */}
           <Col
@@ -81,21 +119,22 @@ export default function Header({ cartCount, wishlistCount }) {
             </NavLink>
 
             {/* Login/Profile with Text */}
-            {user ? (
+            {isAuthenticated ? (
               <NavLink
                 to="/profile"
-                className="d-flex align-items-center text-white text-decoration-none me-lg-2"
+                className="d-flex align-items-center text-dark text-decoration-none me-lg-2"
               >
                 <AccountCircleIcon
                   className={`cursor-pointer ${getIconClass("/profile")} me-1`}
                   style={{ fontSize: "1.6rem" }}
                 />
-                <span className="d-none d-sm-inline">Profile</span>
+                <span className="d-none d-lg-inline text-truncate"
+          style={{ maxWidth: "150px" }} >{currentUser.name}</span>
               </NavLink>
             ) : (
               <NavLink
                 to="/login"
-                className="d-flex align-items-center text-white text-decoration-none me-lg-3"
+                className="d-flex align-items-center text-dark text-decoration-none me-lg-3"
               >
                 <LoginIcon
                   className={`cursor-pointer ${getIconClass("/login")} me-1`}

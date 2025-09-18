@@ -24,7 +24,16 @@ function Nonveg() {
 
   return (
     <>
-    <div className="container-fluid my-4">
+    <div className="container-fluid my-4" style={{color:"#f1f3f6"}}>
+    {/* Title Section */}
+<div className="text-center mb-4">
+  <h2 className="fw-bold text-danger">Non-Veg Specials</h2>
+  <p className="text-muted">
+    Explore our fresh and premium selection of chicken, mutton, seafood, and more to satisfy your cravings!
+  </p>
+</div>
+
+
       <div className="row g-4 mb-4">
        {currentItems.map((item) => (
         <Card key={item.id} item={item} />

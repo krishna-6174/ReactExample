@@ -22,6 +22,15 @@ function Milk() {
 
   return (
      <div className="container-fluid my-4">
+
+      {/* Title Section - Milk & Dairy */}
+<div className="text-center mb-4">
+  <h2 className="fw-bold text-info">Milk & Dairy</h2>
+  <p className="text-muted">
+    From fresh milk to creamy curd, butter, and paneer – discover our wholesome dairy collection for your daily nutrition.
+  </p>
+</div>
+
       <div className="row g-4 mb-4">
         {currentItems.map((item) => (
           <Card key={item.id} item={item} />

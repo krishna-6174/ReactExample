@@ -1,8 +1,10 @@
 
-.form-control-sm {
-  border-radius: 50px !important;
+
+.input-group-text:last-child:hover {
+  background-color: #2874f0 !important;
 }
-.input-group-text {
-  border-radius: 50px !important;
+
+.input-group-text:last-child:hover i {
+  color: #fff !important;
 }
 

@@ -13,7 +13,7 @@ import { loginUser } from "./store"; // your thunk
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const [iconFade, setIconFade] = useState(true);
+
   const [role, setRole] = useState("customer");
   const [errors, setErrors] = useState({ email: "", password: "" });
 
@@ -112,13 +112,7 @@ useEffect(() => {
     }
   };
 
-  const handleTogglePassword = () => {
-    setIconFade(false);
-    setTimeout(() => {
-      setShowPassword((prev) => !prev);
-      setIconFade(true);
-    }, 150);
-  };
+ 
 
   return (
    <>
