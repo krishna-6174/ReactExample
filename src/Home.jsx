@@ -493,7 +493,7 @@ const testimonials = [
             <div className="choose-us-card border p-4 text-center h-100">
               <i className={`bi ${feature.icon} fs-1 text-primary`}></i>
               <h5 className="mt-3 fw-bold text-success">{feature.title}</h5>
-              <p className="mt-2">{feature.desc}</p>
+              <p className="mt-2 text-muted">{feature.desc}</p>
             </div>
           </div>
         ))}
