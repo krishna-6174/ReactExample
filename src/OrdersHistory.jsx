@@ -39,10 +39,12 @@ function OrdersHistory() {
             order.items.forEach((item) => dispatch(addToCart(item)));
             Swal.fire("Replaced!", "Your cart was replaced with this order.", "success");
           }
+          navigate("/cart");
         });
       } else {
         order.items.forEach((item) => dispatch(addToCart(item)));
-        Swal.fire("Reordered!", "All items were added to your cart.", "success");
+        Swal.fire("Place Order!", "All items were added to your cart.", "success");
+        navigate("/cart");
       }
     },
     [cart, dispatch]
