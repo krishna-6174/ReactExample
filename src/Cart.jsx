@@ -118,9 +118,14 @@ function Cart() {
 
     emailjs.send("service_tt6a4lh", "template_2bx0xfd", {
       email: users.currentUser.email,
-      order_id: Date.now(),
+      order_id: order.orderId,
       orders: order.items.map((item) => ({
-         name: item.name, price: item.price, units: item.quantity, image: `${window.location.origin}${item.image}`, })),
+         name: item.name, 
+         price: item.price, 
+         units: item.quantity, 
+         image: `${window.location.origin}${item.image}`, })),
+         couponCodeResult,
+         totalAmount,
       cost: { shipping: shippingCost, tax, total: finalPrice.toFixed(2) }
     },"jx15nHhtYjQ9jlPfB").then(() => {
       toast.success("Order Confirmation mail sent successfully!");
