@@ -1,7 +1,7 @@
 
 export function calculateTotal(cartItems){
     if(!cartItems || cartItems.length === 0) return 0;
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cartItems.reduce((total, item) => total + (item.offerPrice !== 0 ? item.offerPrice : item.price)  * item.quantity, 0);
 }
 export function calculateButtonDiscount(totalPrice,discountPercentage){
     return totalPrice*discountPercentage/100;

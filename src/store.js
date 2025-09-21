@@ -578,287 +578,308 @@ nonvegItems : [
   },
 ],
 //milk items..to display in Milk.jsx
-milkItems : [
-  {
-    id: 201,
-    title: "Full Cream Milk",
+milkItems :[
+   {
+    id: 101,
+    title: "Fresh Chicken",
     description:
-      "Rich and creamy full cream milk, perfect for tea, coffee, milkshakes, and desserts. Packed with protein and calcium for a healthy lifestyle.",
-    price: 60,
-    discount: 10,
-    rating: 4.7,
-    reviewCount: 520,
-    image: "/milk/full-cream.png",
-    inStock: true,
-  },
-  {
-    id: 202,
-    title: "Toned Milk",
-    description:
-      "Healthy toned milk with reduced fat content, ideal for daily use and recommended for a balanced diet.",
-    price: 50,
-    discount: 5,
-    rating: 4.5,
-    reviewCount: 430,
-    image: "/milk/toned-milk.webp",
-    inStock: true,
-  },
-  {
-    id: 203,
-    title: "Double Toned Milk",
-    description:
-      "Low-fat double toned milk, great for fitness-conscious individuals. Keeps you light while maintaining nutrition.",
-    price: 45,
-    discount: 8,
-    rating: 4.4,
-    reviewCount: 390,
-    image: "/milk/double-toned.webp",
-    inStock: true,
-  },
-  {
-    id: 204,
-    title: "Skimmed Milk",
-    description:
-      "Fat-free skimmed milk, high in protein and calcium, suitable for weight management and heart health.",
-    price: 40,
-    discount: 5,
-    rating: 4.3,
-    reviewCount: 250,
-    image: "/milk/skimmed-milk.png",
-    inStock: true,
-  },
-  {
-    id: 205,
-    title: "Cow Milk",
-    description:
-      "Pure cow milk, sourced fresh every day, naturally nutritious and perfect for daily drinking.",
-    price: 55,
-    discount: 10,
-    rating: 4.6,
-    reviewCount: 600,
-    image: "/milk/cow-milk.webp",
-    inStock: true,
-  },
-  {
-    id: 206,
-    title: "Buffalo Milk",
-    description:
-      "Thick and creamy buffalo milk, rich in calcium and flavor. Best for making curd, paneer, and sweets.",
-    price: 65,
-    discount: 7,
-    rating: 4.5,
-    reviewCount: 350,
-    image: "/milk/buffalo-milk.webp",
-    inStock: true,
-  },
-  {
-    id: 207,
-    title: "Organic Milk",
-    description:
-      "Farm-fresh organic milk produced without chemicals, hormones, or preservatives for a natural taste.",
-    price: 70,
-    discount: 12,
-    rating: 4.8,
-    reviewCount: 450,
-    image: "/milk/organic-milk.png",
-    inStock: true,
-  },
-  {
-    id: 208,
-    title: "Flavored Milk - Chocolate",
-    description:
-      "Delicious chocolate-flavored milk, a treat loved by kids and adults alike. Perfect for a quick energy boost.",
-    price: 80,
-    discount: 10,
-    rating: 4.7,
-    reviewCount: 800,
-    image: "/milk/chacolate-milk.png",
-    inStock: true,
-  },
-  {
-    id: 209,
-    title: "Flavored Milk - Strawberry",
-    description:
-      "Sweet and refreshing strawberry milk, chilled and ready-to-drink. Great as a post-meal dessert drink.",
-    price: 80,
-    discount: 10,
-    rating: 4.6,
-    reviewCount: 720,
-    image: "/milk/strawberry-milk.png",
-    inStock: true,
-  },
-  {
-    id: 210,
-    title: "Flavored Milk - Vanilla",
-    description:
-      "Smooth vanilla-flavored milk, mildly sweet and creamy, perfect for milkshake lovers.",
-    price: 80,
-    discount: 10,
-    rating: 4.5,
-    reviewCount: 600,
-    image: "/milk/vanilla-milk.png",
-    inStock: true,
-  },
-  {
-    id: 211,
-    title: "Milk Powder",
-    description:
-      "Instant milk powder, easy to mix and convenient for tea, coffee, baking, and emergencies.",
+      "Farm-fresh, tender, and juicy chicken perfect for curries, biryanis, barbecues, and roasts. Skinless and cleaned for your convenience.",
     price: 200,
-    discount: 15,
-    rating: 4.4,
-    reviewCount: 350,
-    image: "/milk/milk-powder.png",
-    inStock: true,
-  },
-  {
-    id: 212,
-    title: "Condensed Milk",
-    description:
-      "Thick and sweet condensed milk, ideal for Indian sweets, desserts, and ice creams.",
-    price: 120,
-    discount: 5,
-    rating: 4.7,
-    reviewCount: 420,
-    image: "/milk/condensed-milk.png",
-    inStock: true,
-  },
-  {
-    id: 213,
-    title: "Evaporated Milk",
-    description:
-      "Rich and creamy evaporated milk, perfect for baking, puddings, and custards.",
-    price: 100,
-    discount: 8,
-    rating: 4.5,
-    reviewCount: 250,
-    image: "/milk/evaporated-milk.webp",
-    inStock: true,
-  },
-  {
-    id: 214,
-    title: "UHT Milk",
-    description:
-      "Long-life UHT milk that stays fresh for months without refrigeration until opened.",
-    price: 75,
-    discount: 6,
-    rating: 4.4,
-    reviewCount: 300,
-    image: "/milk/UHT-milk.webp",
-    inStock: true,
-  },
-  {
-    id: 215,
-    title: "Lactose-Free Milk",
-    description:
-      "Easy-to-digest lactose-free milk, specially processed for people with lactose intolerance.",
-    price: 90,
-    discount: 10,
+    offerPrice: 185,
+    image: "/nonveg/chicken.png",
     rating: 4.6,
-    reviewCount: 280,
-    image: "/milk/lactose-milk.png",
+    reviewCount: 450,
     inStock: true,
+    productType: "nonveg",
   },
   {
-    id: 216,
-    title: "Buttermilk",
+    id: 102,
+    title: "Premium Mutton",
     description:
-      "Refreshing buttermilk (chaas) seasoned with light spices. Great for digestion and cooling in summers.",
-    price: 35,
-    discount: 5,
-    rating: 4.8,
-    reviewCount: 520,
-    image: "/milk/buttermilk.png",
-    inStock: true,
-  },
-  {
-    id: 217,
-    title: "Curd",
-    description:
-      "Creamy, fresh curd (dahi), probiotic-rich and healthy. Perfect for raitas, lassis, and meals.",
-    price: 60,
-    discount: 10,
+      "Soft and flavorful mutton sourced from grass-fed goats. Ideal for slow-cooked curries, biryanis, and weekend feasts.",
+    price: 550,
+    offerPrice: 520,
+    image: "/nonveg/mutton.webp",
     rating: 4.7,
-    reviewCount: 610,
-    image: "/milk/curd.png",
+    reviewCount: 320,
     inStock: true,
+    productType: "nonveg",
   },
   {
-    id: 218,
-    title: "Paneer",
+    id: 103,
+    title: "Fresh River Fish",
     description:
-      "Soft and fresh paneer (cottage cheese), rich in protein and perfect for curries, snacks, and sandwiches.",
+      "Delicious river fish, rich in protein and omega-3, perfect for frying, steaming, or spicy fish curries.",
     price: 300,
-    discount: 12,
-    rating: 4.8,
-    reviewCount: 700,
-    image: "/milk/paneer.png",
+    offerPrice: 280,
+    image: "/nonveg/fish.png",
+    rating: 4.4,
+    reviewCount: 210,
     inStock: true,
+    productType: "nonveg",
   },
   {
-    id: 219,
-    title: "Cheese",
+    id: 104,
+    title: "Juicy Prawns",
     description:
-      "Delicious cheese, perfect for pizzas, pastas, burgers, and sandwiches. Rich in flavor and calcium.",
+      "Fresh and succulent prawns, cleaned and deveined, ideal for curries, stir-fries, fried rice, and biryanis.",
     price: 400,
-    discount: 15,
-    rating: 4.7,
-    reviewCount: 580,
-    image: "/milk/cheese-milk.png",
-    inStock: true,
-  },
-  {
-    id: 220,
-    title: "Butter",
-    description:
-      "Smooth, creamy butter, perfect for bread, parathas, baking, and cooking.",
-    price: 200,
-    discount: 10,
-    rating: 4.6,
-    reviewCount: 450,
-    image: "/milk/butter.png",
-    inStock: true,
-  },
-  {
-    id: 221,
-    title: "Ghee",
-    description:
-      "Pure desi ghee, aromatic and flavorful. Adds richness to sweets, gravies, and Indian dishes.",
-    price: 600,
-    discount: 10,
-    rating: 4.9,
-    reviewCount: 810,
-    image: "/milk/ghee.webp",
-    inStock: true,
-  },
-  {
-    id: 222,
-    title: "Fresh Cream",
-    description:
-      "Rich and thick fresh cream, perfect for desserts, gravies, and baked goods.",
-    price: 150,
-    discount: 7,
+    offerPrice: 370,
+    image: "/nonveg/prawns.png",
     rating: 4.5,
-    reviewCount: 360,
-    image: "/milk/cream.webp",
+    reviewCount: 260,
     inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 105,
+    title: "Farm-Fresh Eggs",
+    description:
+      "Protein-rich eggs with a golden yolk, perfect for breakfast, omelets, boiled eggs, and baking needs.",
+    price: 60,
+    offerPrice: 55,
+    image: "/nonveg/eggs.png",
+    rating: 4.8,
+    reviewCount: 500,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 106,
+    title: "Sea Crab",
+    description:
+      "Fresh, juicy crabs packed with flavor. Great for crab curry, masala fry, and seafood lovers.",
+    price: 500,
+    offerPrice: 460,
+    image: "/nonveg/crab.png",
+    rating: 4.6,
+    reviewCount: 170,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 107,
+    title: "Tender Lamb Meat",
+    description:
+      "Soft, lean lamb meat perfect for kebabs, curries, and aromatic grilled dishes. Trimmed and fresh.",
+    price: 600,
+    offerPrice: 560,
+    image: "/nonveg/lamb.png",
+    rating: 4.7,
+    reviewCount: 145,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 108,
+    title: "Farm Duck",
+    description:
+      "Rich and flavorful duck meat, excellent for slow-roasted dishes, curries, and festive meals.",
+    price: 450,
+    offerPrice: 420,
+    image: "/nonveg/duck.png",
+    rating: 4.3,
+    reviewCount: 98,
+    inStock: false,
+    productType: "nonveg",
+  },
+  {
+    id: 109,
+    title: "Fresh Squid (Calamari)",
+    description:
+      "Soft and tender squid, cleaned and ready to cook. Great for fried calamari rings, grills, and seafood curries.",
+    price: 350,
+    offerPrice: 320,
+    image: "/nonveg/squid.png",
+    rating: 4.5,
+    reviewCount: 110,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 110,
+    title: "Lean Turkey Meat",
+    description:
+      "Protein-packed turkey meat, perfect for healthy meals, roasts, and grilled dishes. Low-fat and nutritious.",
+    price: 500,
+    offerPrice: 470,
+    image: "/nonveg/turkey.png",
+    rating: 4.4,
+    reviewCount: 135,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 112,
+    title: "Fresh Goat Meat",
+    description:
+      "Tender goat meat ideal for traditional curries, stews, and slow cooking. Packed with authentic flavor.",
+    price: 550,
+    offerPrice: 520,
+    image: "/nonveg/goat.png",
+    rating: 4.6,
+    reviewCount: 190,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 113,
+    title: "Premium Beef Cuts",
+    description:
+      "Juicy, tender beef cuts perfect for steaks, kebabs, and curries. Grass-fed and hygienically packed.",
+    price: 700,
+    offerPrice: 660,
+    image: "/nonveg/beef.png",
+    rating: 4.5,
+    reviewCount: 160,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 114,
+    title: "Fresh Pork Meat",
+    description:
+      "Flavorful and juicy pork, ideal for roasts, curries, chops, and pulled pork recipes.",
+    price: 400,
+    offerPrice: 370,
+    image: "/nonveg/pork.png",
+    rating: 4.3,
+    reviewCount: 100,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 115,
+    title: "Atlantic Salmon",
+    description:
+      "Premium salmon fillets, rich in omega-3 fatty acids. Perfect for grilling, baking, and sushi.",
+    price: 800,
+    offerPrice: 750,
+    image: "/nonveg/salmon.png",
+    rating: 4.9,
+    reviewCount: 180,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 117,
+    title: "Mediterranean Octopus",
+    description:
+      "Tender octopus meat, cleaned and ready to cook. Ideal for Mediterranean-style grills and seafood platters.",
+    price: 600,
+    offerPrice: 550,
+    image: "/nonveg/octopus.png",
+    rating: 4.4,
+    reviewCount: 85,
+    inStock: false,
+    productType: "nonveg",
+  },
+  {
+    id: 118,
+    title: "Premium Lobster",
+    description:
+      "Sweet, succulent lobster freshly sourced from the sea. A delicacy perfect for luxury dining and seafood platters.",
+    price: 1200,
+    offerPrice: 1100,
+    image: "/nonveg/lobster.png",
+    rating: 4.9,
+    reviewCount: 95,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 120,
+    title: "Fresh Oysters",
+    description:
+      "Juicy, tender oysters fresh from the sea, great for soups, grills, and raw preparations.",
+    price: 500,
+    offerPrice: 470,
+    image: "/nonveg/oyster.png",
+    rating: 4.2,
+    reviewCount: 60,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 121,
+    title: "Salty Anchovies",
+    description:
+      "Small, flavorful anchovies that add a burst of umami to pizzas, salads, and seafood curries.",
+    price: 250,
+    offerPrice: 230,
+    image: "/nonveg/anchovis.png",
+    rating: 4.3,
+    reviewCount: 70,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 122,
+    title: "Fresh Sardines",
+    description:
+      "Nutritious sardines rich in calcium and omega-3, perfect for grilling, frying, and curry preparations.",
+    price: 220,
+    offerPrice: 200,
+    image: "/nonveg/sardine.png",
+    rating: 4.5,
+    reviewCount: 90,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 123,
+    title: "Smoked Ham",
+    description:
+      "Delicious smoked ham slices perfect for sandwiches, pizzas, and breakfast platters.",
+    price: 600,
+    offerPrice: 560,
+    image: "/nonveg/ham.png",
+    rating: 4.6,
+    reviewCount: 115,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 124,
+    title: "Crispy Bacon",
+    description:
+      "Smoky, crispy bacon strips that make a perfect addition to burgers, salads, and breakfast meals.",
+    price: 450,
+    offerPrice: 420,
+    image: "/nonveg/bacon.png",
+    rating: 4.8,
+    reviewCount: 160,
+    inStock: true,
+    productType: "nonveg",
+  },
+  {
+    id: 126,
+    title: "Lean Venison",
+    description:
+      "Tender venison meat with a rich, earthy flavor. Ideal for steaks, curries, and healthy protein-packed meals.",
+    price: 900,
+    offerPrice: 850,
+    image: "/nonveg/venison.png",
+    rating: 4.4,
+    reviewCount: 55,
+    inStock: true,
+    productType: "nonveg",
   },
 ],
 
-
 medicineItems : [
-
- {
+   {
     id: 301,
     title: "Paracetamol",
     description:
       "Widely used for fever reduction and mild pain relief. Trusted for headaches, body pain, and flu symptoms. Commonly sold as Crocin, Dolo-650.",
     price: 30,
-    discount: 5,
+    offerPrice: 25, // price - discount
     rating: 4.8,
     reviewCount: 1200,
     image: "/medicines/paracetamal.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 302,
@@ -866,11 +887,12 @@ medicineItems : [
     description:
       "Anti-inflammatory and pain-relieving medicine. Helps with headaches, muscle pain, menstrual cramps, and minor injuries.",
     price: 40,
-    discount: 8,
+    offerPrice: 32,
     rating: 4.6,
     reviewCount: 980,
     image: "/medicines/ibuprofen.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 303,
@@ -878,11 +900,12 @@ medicineItems : [
     description:
       "A powerful antibiotic used to treat bacterial infections like throat infection, pneumonia, and ear infections. Always use under prescription.",
     price: 120,
-    discount: 10,
+    offerPrice: 108,
     rating: 4.5,
     reviewCount: 560,
     image: "/medicines/amoxicillin.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 304,
@@ -890,11 +913,12 @@ medicineItems : [
     description:
       "Fast-acting anti-allergic tablet used for runny nose, sneezing, watery eyes, and hay fever relief. Non-drowsy formula available.",
     price: 25,
-    discount: 5,
+    offerPrice: 20,
     rating: 4.7,
     reviewCount: 1500,
     image: "/medicines/cetirizine.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 305,
@@ -902,11 +926,12 @@ medicineItems : [
     description:
       "Boosts immunity, helps fight infections, promotes collagen production and healthy skin.",
     price: 150,
-    discount: 12,
+    offerPrice: 138,
     rating: 4.8,
     reviewCount: 1120,
     image: "/medicines/vitamin-c.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 306,
@@ -914,11 +939,12 @@ medicineItems : [
     description:
       "Complete multivitamin supplement with essential vitamins and minerals for daily energy, immunity, and wellness.",
     price: 200,
-    discount: 15,
+    offerPrice: 170,
     rating: 4.7,
     reviewCount: 980,
     image: "/medicines/multivitamin.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 307,
@@ -926,11 +952,12 @@ medicineItems : [
     description:
       "Oral rehydration solution powder for quick recovery from dehydration caused by diarrhea, vomiting, or heat.",
     price: 15,
-    discount: 5,
+    offerPrice: 10,
     rating: 4.9,
     reviewCount: 800,
     image: "/medicines/ors.avif",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 308,
@@ -938,11 +965,12 @@ medicineItems : [
     description:
       "Relieves both dry and wet cough, soothes throat irritation, and provides quick comfort for respiratory issues.",
     price: 90,
-    discount: 7,
+    offerPrice: 83,
     rating: 4.5,
     reviewCount: 640,
     image: "/medicines/cough-syrup.webp",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 309,
@@ -950,11 +978,12 @@ medicineItems : [
     description:
       "Broad-spectrum antibiotic used for bacterial infections like respiratory infections, skin infections, and typhoid fever. Prescription required.",
     price: 150,
-    discount: 10,
+    offerPrice: 135,
     rating: 4.6,
     reviewCount: 410,
     image: "/medicines/azithromycin.webp",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 310,
@@ -962,11 +991,12 @@ medicineItems : [
     description:
       "Instant pain relief spray for muscle pain, back pain, sprains, and joint stiffness. Quick absorption formula.",
     price: 180,
-    discount: 12,
+    offerPrice: 158,
     rating: 4.8,
     reviewCount: 720,
     image: "/medicines/pain-relief.webp",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 311,
@@ -974,11 +1004,12 @@ medicineItems : [
     description:
       "Trusted antacid tablets and syrup for quick relief from acidity, gas, and indigestion.",
     price: 80,
-    discount: 5,
+    offerPrice: 75,
     rating: 4.7,
     reviewCount: 550,
     image: "/medicines/digene.jpg",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 312,
@@ -986,11 +1017,12 @@ medicineItems : [
     description:
       "Ready-to-drink electrolyte solution to prevent dehydration during summer or after exercise.",
     price: 35,
-    discount: 5,
+    offerPrice: 30,
     rating: 4.9,
     reviewCount: 420,
     image: "/medicines/ors.webp",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 313,
@@ -998,11 +1030,12 @@ medicineItems : [
     description:
       "Essential injection for diabetic patients to manage blood sugar levels effectively. Use as per doctor's prescription.",
     price: 500,
-    discount: 10,
+    offerPrice: 450,
     rating: 4.8,
     reviewCount: 280,
     image: "/medicines/insulin.jpg",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 314,
@@ -1010,11 +1043,12 @@ medicineItems : [
     description:
       "Easy-to-use test strips for monitoring blood sugar levels at home. Compatible with most glucometers.",
     price: 600,
-    discount: 15,
+    offerPrice: 510,
     rating: 4.6,
     reviewCount: 320,
     image: "/medicines/glucometer.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 315,
@@ -1022,11 +1056,12 @@ medicineItems : [
     description:
       "Sterile adhesive bandages for wounds, cuts, and injuries. Provides protection and quick healing.",
     price: 50,
-    discount: 10,
+    offerPrice: 40,
     rating: 4.7,
     reviewCount: 700,
     image: "/medicines/bandages.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 316,
@@ -1034,11 +1069,12 @@ medicineItems : [
     description:
       "Antiseptic liquid used to disinfect wounds, prevent infections, and maintain hygiene. Trusted brands include Dettol and Savlon.",
     price: 120,
-    discount: 8,
+    offerPrice: 110,
     rating: 4.8,
     reviewCount: 650,
     image: "/medicines/anti-septic.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 317,
@@ -1046,11 +1082,12 @@ medicineItems : [
     description:
       "Supports bone health, improves calcium absorption, and boosts immunity. Recommended for vitamin D deficiency.",
     price: 180,
-    discount: 10,
+    offerPrice: 162,
     rating: 4.8,
     reviewCount: 480,
     image: "/medicines/vitamin-d3.jpg",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 318,
@@ -1058,11 +1095,12 @@ medicineItems : [
     description:
       "Strengthens bones and teeth, helps prevent osteoporosis, and supports muscle function.",
     price: 200,
-    discount: 10,
+    offerPrice: 180,
     rating: 4.7,
     reviewCount: 510,
     image: "/medicines/calcium.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 319,
@@ -1070,11 +1108,12 @@ medicineItems : [
     description:
       "Used to treat anemia and iron deficiency, improves energy levels and overall health.",
     price: 170,
-    discount: 8,
+    offerPrice: 156,
     rating: 4.6,
     reviewCount: 370,
     image: "/medicines/iron.webp",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 320,
@@ -1082,11 +1121,12 @@ medicineItems : [
     description:
       "Instant hydration energy drink powder. Replenishes salts and prevents dehydration during heat or exercise.",
     price: 40,
-    discount: 5,
+    offerPrice: 35,
     rating: 4.9,
     reviewCount: 600,
     image: "/medicines/hydration.webp",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 321,
@@ -1094,11 +1134,12 @@ medicineItems : [
     description:
       "Kills 99.9% of germs instantly. Pocket-friendly hygiene solution for home and travel use.",
     price: 70,
-    discount: 12,
+    offerPrice: 58,
     rating: 4.8,
     reviewCount: 890,
     image: "/medicines/sanitizer.png",
     inStock: true,
+    productType: "medicine",
   },
   {
     id: 322,
@@ -1106,25 +1147,28 @@ medicineItems : [
     description:
       "Digital thermometer for accurate body temperature measurement. Suitable for home and clinic use.",
     price: 250,
-    discount: 10,
+    offerPrice: 225,
     rating: 4.6,
     reviewCount: 320,
     image: "/medicines/thermometer.webp",
     inStock: true,
+    productType: "medicine",
   },
+
 ],
 drinkItems: [
-  {
+   {
     id: 420,
     title: "Fresh Orange Juice",
     description:
       "100% freshly squeezed oranges, rich in Vitamin C and natural sweetness. Perfect immunity booster.",
     price: 90,
-    discount: 8,
+    offerPrice: 82,
     rating: 4.9,
     reviewCount: 820,
     image: "/drinks/orange-juice.png",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 421,
@@ -1132,11 +1176,12 @@ drinkItems: [
     description:
       "Made from fresh apples, naturally sweet and packed with antioxidants. A healthy drink for all ages.",
     price: 85,
-    discount: 7,
+    offerPrice: 78,
     rating: 4.8,
     reviewCount: 610,
     image: "/drinks/apple-juice.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 422,
@@ -1144,11 +1189,12 @@ drinkItems: [
     description:
       "Sweet and pulpy mango juice, loved by kids and adults. A tropical delight in every sip.",
     price: 95,
-    discount: 10,
+    offerPrice: 85,
     rating: 4.9,
     reviewCount: 940,
     image: "/drinks/mango-juice.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 423,
@@ -1156,11 +1202,12 @@ drinkItems: [
     description:
       "Refreshing tropical juice made from ripe pineapples. Great source of Vitamin C and digestive enzymes.",
     price: 100,
-    discount: 8,
+    offerPrice: 92,
     rating: 4.7,
     reviewCount: 530,
     image: "/drinks/pineapple-juice.jpg",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 424,
@@ -1168,11 +1215,12 @@ drinkItems: [
     description:
       "Rich in antioxidants and iron, this juice helps boost energy and improve heart health.",
     price: 120,
-    discount: 10,
+    offerPrice: 110,
     rating: 4.9,
     reviewCount: 670,
     image: "/drinks/pomegranate-juice.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 425,
@@ -1180,11 +1228,12 @@ drinkItems: [
     description:
       "A colorful blend of fresh seasonal fruits, offering a burst of flavors and essential nutrients.",
     price: 110,
-    discount: 9,
+    offerPrice: 101,
     rating: 4.8,
     reviewCount: 720,
     image: "/drinks/mixed-fruit.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 400,
@@ -1192,11 +1241,12 @@ drinkItems: [
     description:
       "Classic fizzy soft drink with a unique cola flavor. Perfectly refreshing and best served chilled. Available in bottles and cans.",
     price: 40,
-    discount: 5,
+    offerPrice: 35,
     rating: 4.8,
     reviewCount: 2200,
     image: "/drinks/coca-cola.png",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 401,
@@ -1204,11 +1254,12 @@ drinkItems: [
     description:
       "Popular cola-flavored soft drink with a sweet, refreshing taste. Great companion for snacks and parties.",
     price: 40,
-    discount: 5,
+    offerPrice: 35,
     rating: 4.7,
     reviewCount: 1900,
     image: "/drinks/pepsi.png",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 402,
@@ -1216,11 +1267,12 @@ drinkItems: [
     description:
       "Lemon-lime flavored carbonated drink. Crisp, clear, and extra refreshing with a zesty twist.",
     price: 35,
-    discount: 4,
+    offerPrice: 31,
     rating: 4.8,
     reviewCount: 2100,
     image: "/drinks/sprite.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 403,
@@ -1228,11 +1280,12 @@ drinkItems: [
     description:
       "Fruity, bubbly orange-flavored soft drink. Bright, tangy, and sweet taste that kids and adults love.",
     price: 35,
-    discount: 5,
+    offerPrice: 30,
     rating: 4.7,
     reviewCount: 1750,
     image: "/drinks/fanta-orange.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 404,
@@ -1240,11 +1293,12 @@ drinkItems: [
     description:
       "Citrus-flavored soft drink with a bold and energizing taste. Great for game nights and outdoor fun.",
     price: 45,
-    discount: 6,
+    offerPrice: 39,
     rating: 4.6,
     reviewCount: 1620,
     image: "/drinks/mountain-dew.png",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 405,
@@ -1252,11 +1306,12 @@ drinkItems: [
     description:
       "Strong cola-flavored fizzy drink with a signature punch. Loved by those who prefer bold, spicy cola taste.",
     price: 40,
-    discount: 5,
+    offerPrice: 35,
     rating: 4.8,
     reviewCount: 1800,
     image: "/drinks/thumbs-up.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 406,
@@ -1264,11 +1319,12 @@ drinkItems: [
     description:
       "Clear lemon-lime drink with a crisp, clean, and refreshing flavor. Perfect for mixing or drinking alone.",
     price: 35,
-    discount: 5,
+    offerPrice: 30,
     rating: 4.7,
     reviewCount: 1450,
     image: "/drinks/7up.png",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 407,
@@ -1276,11 +1332,12 @@ drinkItems: [
     description:
       "Popular Indian lemon-lime soft drink with a tangy, zesty taste. Refreshing and light on the stomach.",
     price: 35,
-    discount: 5,
+    offerPrice: 30,
     rating: 4.6,
     reviewCount: 1280,
     image: "/drinks/limca.png",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 408,
@@ -1288,11 +1345,12 @@ drinkItems: [
     description:
       "Thick, pulpy mango drink made from real mangoes. The ultimate choice for mango lovers all year round.",
     price: 50,
-    discount: 8,
+    offerPrice: 42,
     rating: 4.9,
     reviewCount: 2500,
     image: "/drinks/maaza-mango.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 409,
@@ -1300,11 +1358,12 @@ drinkItems: [
     description:
       "Smooth, rich, and velvety mango drink with authentic fruit flavor. A true treat for summer thirst.",
     price: 50,
-    discount: 8,
+    offerPrice: 42,
     rating: 4.8,
     reviewCount: 2300,
     image: "/drinks/slice-mango.png",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 410,
@@ -1312,11 +1371,12 @@ drinkItems: [
     description:
       "India’s first sparkling apple drink. Sweet, fizzy, and classy – a perfect mocktail base for parties.",
     price: 55,
-    discount: 10,
+    offerPrice: 45,
     rating: 4.7,
     reviewCount: 1750,
     image: "/drinks/appy-fizz.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 411,
@@ -1324,11 +1384,12 @@ drinkItems: [
     description:
       "Traditional Indian raw mango summer cooler with a sweet, tangy, and spiced taste.",
     price: 60,
-    discount: 8,
+    offerPrice: 52,
     rating: 4.8,
     reviewCount: 980,
     image: "/drinks/paper-boat.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 412,
@@ -1336,11 +1397,12 @@ drinkItems: [
     description:
       "World-famous energy drink. Gives you wings with caffeine, taurine, and B-vitamins for instant energy.",
     price: 120,
-    discount: 5,
+    offerPrice: 114,
     rating: 4.7,
     reviewCount: 3000,
     image: "/drinks/redbull.png",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 413,
@@ -1348,11 +1410,12 @@ drinkItems: [
     description:
       "High-performance energy drink with a bold flavor and extra caffeine boost. Popular among gamers and athletes.",
     price: 130,
-    discount: 7,
+    offerPrice: 121,
     rating: 4.6,
     reviewCount: 2200,
     image: "/drinks/monster.jpg",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 414,
@@ -1360,11 +1423,12 @@ drinkItems: [
     description:
       "Electrolyte sports drink designed to rehydrate and restore energy during workouts and sports.",
     price: 90,
-    discount: 6,
+    offerPrice: 84,
     rating: 4.8,
     reviewCount: 1400,
     image: "/drinks/gatorade.jpg",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 415,
@@ -1372,11 +1436,12 @@ drinkItems: [
     description:
       "100% natural coconut water. Packed with electrolytes, light, and refreshing. Great for hydration.",
     price: 60,
-    discount: 5,
+    offerPrice: 55,
     rating: 4.9,
     reviewCount: 1700,
     image: "/drinks/coconut-water.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 416,
@@ -1384,11 +1449,12 @@ drinkItems: [
     description:
       "Traditional natural sugarcane drink, rich in nutrients and instantly energizing. Best served chilled.",
     price: 50,
-    discount: 5,
+    offerPrice: 45,
     rating: 4.8,
     reviewCount: 890,
     image: "/drinks/sugarcane.jpg",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 417,
@@ -1396,11 +1462,12 @@ drinkItems: [
     description:
       "Cool and refreshing spiced buttermilk drink. Excellent for digestion and summer heat relief.",
     price: 30,
-    discount: 8,
+    offerPrice: 22,
     rating: 4.8,
     reviewCount: 1300,
     image: "/drinks/Buttermilk.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 418,
@@ -1408,11 +1475,12 @@ drinkItems: [
     description:
       "Iced coffee blended with milk and sugar. Perfect pick-me-up drink for coffee lovers.",
     price: 80,
-    discount: 10,
+    offerPrice: 70,
     rating: 4.7,
     reviewCount: 1600,
     image: "/drinks/cold-coffee.webp",
     inStock: true,
+    productType: "drink",
   },
   {
     id: 419,
@@ -1420,25 +1488,30 @@ drinkItems: [
     description:
       "Traditional Indian yogurt-based drink, available in sweet and salty variants. Thick and satisfying.",
     price: 50,
-    discount: 8,
+    offerPrice: 42,
     rating: 4.9,
     reviewCount: 1100,
     image: "/drinks/lassi.png",
     inStock: true,
+    productType: "drink",
   },
+
 ],
   treatItems: [
+    
+
   {
     id: 500,
     title: "Gulab Jamun",
     description:
       "Soft and spongy milk-solid dumplings, deep-fried to golden perfection and soaked in fragrant sugar syrup. A classic Indian dessert served warm or at room temperature.",
     price: 120,
-    discount: 8,
+    offerPrice: 112,
     rating: 4.9,
     reviewCount: 1450,
     image: "/treats/julab-gamun.jpg",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 501,
@@ -1446,11 +1519,12 @@ drinkItems: [
     description:
       "Delicate and spongy cottage cheese balls soaked in light sugar syrup. A melt-in-mouth treat that is light, refreshing, and perfect after meals.",
     price: 110,
-    discount: 7,
+    offerPrice: 103,
     rating: 4.8,
     reviewCount: 980,
     image: "/treats/rasagulla.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 502,
@@ -1458,11 +1532,12 @@ drinkItems: [
     description:
       "Thin diamond-shaped cashew nut fudge made with premium cashews, sugar, and ghee. Smooth, rich, and elegant sweet for festive occasions.",
     price: 250,
-    discount: 10,
+    offerPrice: 225,
     rating: 4.9,
     reviewCount: 1320,
     image: "/treats/kaju-katli.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 503,
@@ -1470,11 +1545,12 @@ drinkItems: [
     description:
       "Golden gram flour laddus roasted in ghee and mixed with sugar and cardamom. A wholesome, nutty-flavored sweet that everyone loves.",
     price: 150,
-    discount: 8,
+    offerPrice: 138,
     rating: 4.8,
     reviewCount: 890,
     image: "/treats/laddu.png",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 504,
@@ -1482,11 +1558,12 @@ drinkItems: [
     description:
       "Crispy, coiled deep-fried sweet soaked in saffron-flavored sugar syrup. Served hot for the perfect crunchy and syrupy bite.",
     price: 100,
-    discount: 7,
+    offerPrice: 93,
     rating: 4.7,
     reviewCount: 1250,
     image: "/treats/jalebi.png",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 505,
@@ -1494,11 +1571,12 @@ drinkItems: [
     description:
       "Flaky and melt-in-the-mouth traditional sweet made with gram flour, ghee, and sugar. Light, airy texture makes it a perfect tea-time treat.",
     price: 130,
-    discount: 8,
+    offerPrice: 119,
     rating: 4.6,
     reviewCount: 720,
     image: "/treats/soan-papidi.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 506,
@@ -1506,11 +1584,12 @@ drinkItems: [
     description:
       "Soft and creamy fudge made from milk solids, sugar, and a hint of cardamom. Can be garnished with pistachios or silver leaf.",
     price: 180,
-    discount: 9,
+    offerPrice: 171,
     rating: 4.8,
     reviewCount: 870,
     image: "/treats/milk-barfi.png",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 507,
@@ -1518,11 +1597,12 @@ drinkItems: [
     description:
       "South Indian delicacy made from ghee, sugar, and gram flour. Rich, buttery, and crumbly in every bite – melts in your mouth instantly.",
     price: 190,
-    discount: 8,
+    offerPrice: 174,
     rating: 4.7,
     reviewCount: 640,
     image: "/treats/mysore-pak.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 508,
@@ -1530,11 +1610,12 @@ drinkItems: [
     description:
       "Crispy golden pastry filled with spiced mashed potatoes, peas, and herbs. A perfect savory snack with tea and chutney.",
     price: 30,
-    discount: 5,
+    offerPrice: 25,
     rating: 4.9,
     reviewCount: 3000,
     image: "/treats/samosa.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 509,
@@ -1542,11 +1623,12 @@ drinkItems: [
     description:
       "Deep-fried, flaky pastry stuffed with spiced lentil mixture or peas. Crunchy outside and flavorful inside – ideal for breakfast or snacks.",
     price: 35,
-    discount: 5,
+    offerPrice: 30,
     rating: 4.8,
     reviewCount: 2500,
     image: "/treats/kachori.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 510,
@@ -1554,11 +1636,12 @@ drinkItems: [
     description:
       "Crispy vegetable fritters made with gram flour and spices. Perfect rainy-day snack served with green chutney.",
     price: 50,
-    discount: 6,
+    offerPrice: 44,
     rating: 4.7,
     reviewCount: 2100,
     image: "/treats/pakora.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 511,
@@ -1566,11 +1649,12 @@ drinkItems: [
     description:
       "Crispy spiced mixture of flattened rice, peanuts, and lentils. Light, crunchy, and full of flavor for all-day munching.",
     price: 120,
-    discount: 8,
+    offerPrice: 112,
     rating: 4.6,
     reviewCount: 1100,
     image: "/treats/chivda.png",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 512,
@@ -1578,11 +1662,12 @@ drinkItems: [
     description:
       "Traditional South Indian crispy spiral snack made from rice flour and spices. Crunchy, savory, and addictive.",
     price: 140,
-    discount: 7,
+    offerPrice: 131,
     rating: 4.7,
     reviewCount: 950,
     image: "/treats/murukku.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 513,
@@ -1590,11 +1675,12 @@ drinkItems: [
     description:
       "Thinly sliced raw bananas deep-fried till crisp and lightly salted. A crunchy, gluten-free snack alternative.",
     price: 90,
-    discount: 6,
+    offerPrice: 84,
     rating: 4.8,
     reviewCount: 1800,
     image: "/treats/banana-chips.png",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 514,
@@ -1602,11 +1688,12 @@ drinkItems: [
     description:
       "North Indian flaky and crispy biscuit-like snack made from flour and spices. Often served with pickle or tea.",
     price: 100,
-    discount: 8,
+    offerPrice: 92,
     rating: 4.7,
     reviewCount: 820,
     image: "/treats/mathri.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 515,
@@ -1614,11 +1701,12 @@ drinkItems: [
     description:
       "Thin and crunchy Gujarati snack made from wheat flour and spices. Light, healthy, and perfect for guilt-free munching.",
     price: 80,
-    discount: 7,
+    offerPrice: 73,
     rating: 4.8,
     reviewCount: 700,
     image: "/treats/khakhra.jpg",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 516,
@@ -1626,11 +1714,12 @@ drinkItems: [
     description:
       "Crunchy noodle-like savory snack made with gram flour. Can be eaten as-is or used as topping for chaats.",
     price: 70,
-    discount: 6,
+    offerPrice: 64,
     rating: 4.6,
     reviewCount: 650,
     image: "/treats/sev.jpg",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 517,
@@ -1638,11 +1727,12 @@ drinkItems: [
     description:
       "Spicy and tangy rolled snack filled with a flavorful masala mix. A popular Maharashtrian tea-time delight.",
     price: 130,
-    discount: 8,
+    offerPrice: 119,
     rating: 4.7,
     reviewCount: 750,
     image: "/treats/bhakarwadi.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 518,
@@ -1650,11 +1740,12 @@ drinkItems: [
     description:
       "Crunchy and spiral-shaped deep-fried snack made with rice flour and spices. A Diwali favorite and year-round snack.",
     price: 140,
-    discount: 7,
+    offerPrice: 131,
     rating: 4.8,
     reviewCount: 980,
     image: "/treats/chakli.webp",
     inStock: true,
+    productType: "treat",
   },
   {
     id: 519,
@@ -1662,13 +1753,14 @@ drinkItems: [
     description:
       "Crispy puris with ready-to-mix spiced tangy water and fillings. Bring the street food experience home with this DIY kit.",
     price: 150,
-    discount: 9,
+    offerPrice: 136,
     rating: 4.9,
     reviewCount: 2100,
     image: "/treats/pani-puri.png",
     inStock: true,
+    productType: "treat",
   },
-]
+  ]
 
   },
   reducers: {}

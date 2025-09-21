@@ -105,7 +105,10 @@ function Cart() {
       // ✅ generate unique order ID
             orderId: new Date().getTime(),
             date: new Date().toLocaleDateString(),
-            items: [...cartItems],
+            items: cartItems.map((item) => ({
+                ...item, // keep everything as-is
+                price: item.offerPrice !== 0 ? item.offerPrice : item.price, // override price only
+              })),
             totalAmount,
             finalPrice,
             appliedCoupon,
@@ -114,7 +117,7 @@ function Cart() {
             shippingCost,    
     };
     dispatch(addOrder(order));
-    dispatch(clearCart());
+    
 
     emailjs.send("service_tt6a4lh", "template_2bx0xfd", {
       email: users.currentUser.email,
@@ -132,8 +135,9 @@ function Cart() {
     }, () => {
       toast.error("Failed to send confirmation mail.");
     });
-
+    
     navigate("/order-success", { state: { orderId: order.orderId, amount: order.finalPrice } });
+    dispatch(clearCart());
   };
 
   const upiLink = `upi://pay?pa=7794093852@ybl&pn=My%20Awesome%20Store&am=${finalPrice.toFixed(2)}&cu=INR`;
@@ -161,10 +165,10 @@ function Cart() {
                       <div className="item-details">
                         <h6 className="mb-2 text-success ">{item.title}</h6>
                         
-                        <p className="mb-0">
-                          ₹{item.price} x {item.quantity} ={" "}
-                          <span className="fw-bold ">
-                            ₹{item.price * item.quantity}
+                       <p className="mb-0">
+                          ₹{item.offerPrice !== 0 ? item.offerPrice : item.price} x {item.quantity} ={" "}
+                          <span className="fw-bold">
+                            ₹{(item.offerPrice !== 0 ? item.offerPrice : item.price) * item.quantity}
                           </span>
                         </p>
                       </div>
