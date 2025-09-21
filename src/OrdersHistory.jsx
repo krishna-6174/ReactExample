@@ -47,7 +47,7 @@ function OrdersHistory() {
         navigate("/cart");
       }
     },
-    [cart, dispatch]
+    [cart, dispatch, navigate]
   );
 
   useEffect(() => {

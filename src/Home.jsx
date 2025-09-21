@@ -300,7 +300,7 @@ const testimonials = [
               style={{ height: "180px", objectFit: "contain" }}
             />
             <div className="card-body text-center">
-              <h6 className="card-title fw-bold">{product.name}</h6>
+              <h6 className="card-title text-dark fw-bold">{product.name}</h6>
               <p className="card-text">
                 {product.offerPrice ? (
                   <>
