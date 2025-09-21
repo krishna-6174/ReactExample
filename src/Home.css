@@ -114,50 +114,55 @@
 
 /* Carousel image responsive styles */
 /* make sure swiper is relative */
-.category-swiper {
+
+
+
+.image-container {
   position: relative;
+  aspect-ratio: 20 / 12;
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
-/* arrows */
-.category-swiper .swiper-button-prev,
-.category-swiper .swiper-button-next {
-  position: absolute !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  z-index: 10;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
 }
 
-/* bigger arrows */
-
-/* force correct arrow icons */
-.category-swiper .swiper-button-prev::after {
-  
-  font-size: 24px !important;
+.title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
   font-weight: bold;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
-.category-swiper .swiper-button-next::after {
-  font-size: 24px !important;
-  font-weight: bold;
+/* Hover effect */
+.image-link:hover .image {
+  transform: scale(1.05);
+}
+
+.image-link:hover .title-overlay {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
-/* ✅ keep them near edges of swiper container */
-.category-swiper .swiper-button-prev {
-  left: 10px !important;
-}
-
-.category-swiper .swiper-button-next {
-  right: 10px !important;
-}
 
 
 

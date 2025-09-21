@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { toast } from "react-toastify";
 import { addToCart } from "./store";
 import { useSelector } from "react-redux";
@@ -196,7 +197,7 @@ const testimonials = [
         </p>
 
         <motion.a
-          href="#shop"
+          
           className="btn hero-cta bg-success text-white "
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.95 }}
@@ -300,7 +301,7 @@ const testimonials = [
               style={{ height: "180px", objectFit: "contain" }}
             />
             <div className="card-body text-center">
-              <h6 className="card-title text-dark fw-bold">{product.name}</h6>
+              <h6 className="card-title  fw-bold">{product.title}</h6>
               <p className="card-text">
                 {product.offerPrice ? (
                   <>
@@ -335,57 +336,28 @@ const testimonials = [
 
       {/* ---------- DESKTOP/TABLET VIEW (Bootstrap Carousel) ---------- */}
        {!isMobile && (
-        <Swiper
-    modules={[Navigation, Autoplay]} // ❌ Removed Pagination
-    spaceBetween={20}
-    slidesPerView={1}
-    navigation // ✅ enables < >
-    autoplay={{ delay: 3000, disableOnInteraction: false }}
-    loop={true}
-    className="category-swiper"
-  >
-    {carouselSlides.map((slide) => (
-      <SwiperSlide
-        key={slide.id}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
-        <Link
-          to={slide.link}
-          style={{
-            textDecoration: "none",
-            color: "inherit",
-            display: "block",
-          }}
-        >
-          <div
-            style={{
-              aspectRatio: "20/12",
-              width: "60%",
-              margin: "0 auto",
-              overflow: "hidden",
-            }}
-          >
-            <img
-              src={slide.imagePath}
-              alt={slide.title}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: "15px",
-              }}
-            />
-          </div>
-          <h5 className="mt-3 fw-bold text-center">{slide.title}</h5>
-        </Link>
-      </SwiperSlide>
-    ))}
-  </Swiper>
+       <Swiper
+  modules={[Navigation, Autoplay]}
+  spaceBetween={20}
+  slidesPerView={1}
+  navigation
+  autoplay={{ delay: 3000, disableOnInteraction: false }}
+  loop={true}
+  className="category-swiper"
+>
+  {carouselSlides.map((slide) => (
+    <SwiperSlide key={slide.id} className="d-flex flex-column align-items-center">
+      <Link to={slide.link} className="image-link">
+        <div className="image-container">
+          <img src={slide.imagePath} alt={slide.title} className="image" />
+          <div className="title-overlay">{slide.title}</div>
+        </div>
+      </Link>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
+
       )}
 {/* mobile carousol */}
  {isMobile && (
@@ -478,31 +450,10 @@ const testimonials = [
 
     </div>
 )}
-
-
     </section>
 
 
-
-      {/* ---------- Why Choose Us Section ---------- */}
-      <div className="container my-5">
-      <h2 className="text-center fw-bold mb-4 text-dark">Why Choose Us</h2>
-      <div className="row">
-        {features.map((feature, index) => (
-          <div key={index} className="col-md-4 mb-4">
-            <div className="choose-us-card border p-4 text-center h-100">
-              <i className={`bi ${feature.icon} fs-1 text-primary`}></i>
-              <h5 className="mt-3 fw-bold text-success">{feature.title}</h5>
-              <p className="mt-2 text-muted">{feature.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-
-
-
-          {/*option 4*/}
+        {/*option 4*/}
          <div className="container my-5">
   {/* Section Title */}
   <h2 className="mb-4 text-center fw-bold text-dark">
@@ -549,6 +500,28 @@ const testimonials = [
     ))}
   </div>
 </div>
+
+
+
+      {/* ---------- Why Choose Us Section ---------- */}
+      <div className="container my-5">
+      <h2 className="text-center fw-bold mb-4 text-dark">Why Choose Us</h2>
+      <div className="row">
+        {features.map((feature, index) => (
+          <div key={index} className="col-md-4 mb-4">
+            <div className="choose-us-card border p-4 text-center h-100">
+              <i className={`bi ${feature.icon} fs-1 text-primary`}></i>
+              <h5 className="mt-3 fw-bold text-success">{feature.title}</h5>
+              <p className="mt-2 text-muted">{feature.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+
+
+      
 
 
 

@@ -234,7 +234,7 @@ function Cart() {
       {showQR?<h5>Pay Using QR</h5>:<h5>💰 Choose Payment Method</h5>}
         <div className="d-flex  mt-3">
         {!showQR &&  <button className="btn btn-success w-50 me-2" onClick={handleQr}>Pay via QR</button>}
-        {!showQR && <button className="btn btn-primary w-50" onClick={proceedOrder}>Pay via Card</button>}
+        {!showQR && <button className="btn btn-primary w-50" onClick={()=>alert("payment is setup not done ...go with QR")}>Pay via Card</button>}
         </div>
       
 
